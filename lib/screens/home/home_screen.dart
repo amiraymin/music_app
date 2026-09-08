@@ -6,8 +6,23 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text('Welcome to the Music App!'),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            width: 200,
+            height: 200,
+            decoration: BoxDecoration(
+              color: Colors.blue,
+              shape: BoxShape.circle,
+              image: DecorationImage(
+                image: AssetImage('assets/images/music_logo.png'),
+                fit: BoxFit.fill,
+              ),
+            ),
+          ),
+          Text('Welcome to the Music App!\nEnjoy your music experience.'),
+        ],
       ),
     );
   }
