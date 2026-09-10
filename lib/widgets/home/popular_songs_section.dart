@@ -15,6 +15,7 @@ class PopularSongsSection extends StatelessWidget {
            SizedBox(height: 10,),
             Row(
               children: [
+                
                 Container(
                   height: 80,
                   width: 80,
@@ -29,29 +30,38 @@ class PopularSongsSection extends StatelessWidget {
                   ),
                 ),
                 SizedBox(width: 10),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      popularson.popTitel,
-                      style: TextStyle(
-                        fontSize: 17,
-                        fontWeight: FontWeight.w400,
-                        color: Color.fromARGB(255, 255, 255, 255),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        popularson.popTitel,
+                        style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.w400,
+                          color: Color.fromARGB(255, 255, 255, 255),
+                        ),
                       ),
-                    ),
-                    Text(
-                      popularson.popDec,
-                      style: TextStyle(
-                        fontSize: 17,
-                        fontWeight: FontWeight.w400,
-                        color: Color.fromARGB(255, 255, 255, 255),
+                      Text(
+                        popularson.popDec,
+                        style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.w400,
+                          color: Color.fromARGB(255, 255, 255, 255),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                           
+                  ),
                 ),
+                
+             Icon(Icons.more_horiz_outlined,size: 30,color: Color.fromARGB(255, 255, 255, 255),
+
+             ),
               ],
+            
             ),
+         
             SizedBox(height: 10),
             Container(
               height: 1,
