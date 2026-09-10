@@ -1,37 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:music_app/widgets/common/bottom_nav_bar.dart';
+import 'package:music_app/models/favorite_artists.dart';
+import 'package:music_app/models/popular_songs.dart';
+import 'package:music_app/models/top_playlists.dart';
+import 'package:music_app/widgets/home/favorite_artists_section.dart';
+import 'package:music_app/widgets/home/home_header.dart';
+import 'package:music_app/widgets/home/popular_songs_section.dart';
+import 'package:music_app/widgets/home/top_playlists_section.dart';
+import 'package:music_app/widgets/home/trending_songs.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(0xFF120f16),
-        actions: [
-          IconButton(
-            icon: Icon(
-              Icons.notification_important_outlined,
-              color: Color(0xFFFFFFFF),
-              size: 30,
-            ),
-            onPressed: () {
-              // Handle notification button press
-            },
-          ),
-        ],
-        leading: IconButton(
-          icon: Icon(
-            Icons.view_comfortable_outlined,
-            color: Color(0xFF53abf6),
-            size: 30,
-          ),
-          onPressed: () {
-            // Handle menu button press
-          },
-        ),
-      ),
+      appBar: homeheader(),
       body: Padding(
         padding: const EdgeInsets.all(22.0),
         child: SingleChildScrollView(
@@ -39,77 +27,153 @@ class HomeScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Welcome(),
+              SizedBox(height: 16),
+              SearchBox(),
+              SizedBox(height: 16),
               Text(
-                'Hey John👋',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold,color: Color(0xffFFFFFF)),
-              ),
-              SizedBox(height: 8),
-              Text(
-                'What do you want to listen to today?',
-                style: TextStyle(fontSize: 16, color: Color(0xffFFFFFF)),
+                'Trending Songs',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xffFFFFFF),
+                ),
               ),
               SizedBox(height: 16),
               Row(
                 children: [
-                  Expanded(
-                    child: TextFormField(
-                      onTapOutside: (event) {
-                        FocusScope.of(context).unfocus();
-                      },
-                      decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Color(0xff19161d),
-                        hintText: 'Search',
-                        hintStyle: TextStyle(
-                          color: Color(0xffa9a4ad),
-                          fontSize: 20,
-                        ),
-                        prefixIcon: Icon(
-                          Icons.search_rounded,
-                          color: Color.fromARGB(255, 250, 250, 250),
-                          size: 25,
-                        ),
-                        prefixIconConstraints: BoxConstraints(minWidth: 50),
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide.none,
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide.none,
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xff2ba2f7), width: 2),
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 10),
-                  Container(
-                    width: 62,
-                    height: 62,
-                    decoration: BoxDecoration(
-                      color: Color(0xff2ba2f7),
-                      borderRadius: BorderRadius.circular(12.0),
-                    ),
-                    child: IconButton(
-                      icon: Center(
-                        child: Icon(
-                          Icons.tune_rounded,
-                          color: Colors.white,
-                          size: 32,
-                        ),
-                      ),
-                      onPressed: () {
-                        // Handle filter button press
-                      },
+                  SizedBox(
+                    height: 220,
+                    width: 366,
+                    child: ListView.separated(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: trendList.length,
+                      itemBuilder: (context, index) =>
+                          TrendingSongs(trendModel: trendList[index]),
+                      separatorBuilder: (context, index) => SizedBox(width: 10),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 570),
-              
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    "Top Playlists",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xffFFFFFF),
+                    ),
+                  ),
+                  SizedBox(height: 50),
+                  SizedBox(width: 192),
+                  Text(
+                    "See All",
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w500,
+                      color: Color(0xff1e71b6),
+                    ),
+                  ),
+                ],
+              ),
+
+              Row(
+                children: [
+                  SizedBox(
+                    height: 220,
+                    width: 366,
+                    child: ListView.separated(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: topPlayList.length,
+                      itemBuilder: (context, i) =>
+                          TopPlaylistsSection(topPlay: topPlayList[i]),
+                      separatorBuilder: (context, i) => SizedBox(width: 10),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    "Favourite Artists",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xffFFFFFF),
+                    ),
+                  ),
+                  SizedBox(height: 50),
+                  SizedBox(width: 150),
+                  Text(
+                    "See All",
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w500,
+                      color: Color(0xff1e71b6),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  SizedBox(
+                    height: 200,
+                    width: 366,
+
+                    child: ListView.separated(
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, ind) =>
+                          FavoriteArtists(favactor: favArtist[ind]),
+
+                      separatorBuilder: (context, i) => SizedBox(width: 10),
+                      itemCount: favArtist.length,
+                    ),
+                  ),
+                ],
+              ),
+               Row(
+              children: [
+                Text(
+                  "Popular Songs",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xffFFFFFF),
+                  ),
+                ),
+                SizedBox(height: 50),
+                SizedBox(width: 177),
+                Text(
+                  "See All",
+                  style: TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xff1e71b6),
+                  ),
+                ),
+              ],
+            ),
+              Row(
+                children: [
+                  SizedBox(
+                    height: 200,
+                    width: 366,
+
+                    child: ListView.separated(
+                      scrollDirection: Axis.vertical,
+                      itemBuilder: (context, i) =>
+                          PopularSongsSection(popularson: pops[i]),
+
+                      separatorBuilder: (context, i) => SizedBox(width: 10),
+                      itemCount: pops.length,
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
@@ -117,3 +181,4 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
