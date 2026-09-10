@@ -13,7 +13,7 @@ class BottomNavBar extends StatefulWidget {
 
 class _BottomNavBarState extends State<BottomNavBar> {
   int currentIndex = 0; // Track the current index of the selected item
-  final List<Widget> screens = const [
+  List<Widget> screens = [
     HomeScreen(),
     SearchScreen(),
     PlaylistsScreen(),
@@ -30,23 +30,35 @@ class _BottomNavBarState extends State<BottomNavBar> {
         type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            activeIcon: Icon(Icons.home, size: 30,color: Color(0xff2ca2f8)),
-            icon: Icon(Icons.home_rounded, size: 30,color: Color(0xffFFFFFF),),
+            activeIcon: Icon(Icons.home, size: 30, color: Color(0xff2ca2f8)),
+            icon: Icon(Icons.home_rounded, size: 30, color: Color(0xffFFFFFF)),
             label: '',
           ),
           BottomNavigationBarItem(
-            activeIcon: Icon(Icons.search, size: 30,color: Color(0xff2ca2f8)),
-            icon: Icon(Icons.search, size: 30,color: Color(0xffFFFFFF),),
+            activeIcon: Icon(Icons.search, size: 30, color: Color(0xff2ca2f8)),
+            icon: Icon(Icons.search, size: 30, color: Color(0xffFFFFFF)),
             label: '',
           ),
           BottomNavigationBarItem(
-             activeIcon: Icon(Icons.library_music_outlined, size: 30,color: Color(0xff2ca2f8)),
-            icon: Icon(Icons.library_music_outlined, size: 30,color: Color(0xffFFFFFF),),
+            activeIcon: Icon(
+              Icons.library_music_outlined,
+              size: 30,
+              color: Color(0xff2ca2f8),
+            ),
+            icon: Icon(
+              Icons.library_music_outlined,
+              size: 30,
+              color: Color(0xffFFFFFF),
+            ),
             label: '',
           ),
           BottomNavigationBarItem(
-            activeIcon: Icon(Icons.person, size: 30,color: Color(0xff2ca2f8)),
-            icon: Icon(Icons.person_outline_sharp, size: 30,color: Color(0xffFFFFFF),),
+            activeIcon: Icon(Icons.person, size: 30, color: Color(0xff2ca2f8)),
+            icon: Icon(
+              Icons.person_outline_sharp,
+              size: 30,
+              color: Color(0xffFFFFFF),
+            ),
             label: '',
           ),
         ],
