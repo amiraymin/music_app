@@ -12,10 +12,9 @@ class PopularSongsSection extends StatelessWidget {
       children: [
         Column(
           children: [
-           SizedBox(height: 10,),
+            SizedBox(height: 10),
             Row(
               children: [
-                
                 Container(
                   height: 80,
                   width: 80,
@@ -51,21 +50,19 @@ class PopularSongsSection extends StatelessWidget {
                         ),
                       ),
                     ],
-                           
                   ),
                 ),
-                
-             Icon(Icons.more_horiz_outlined,size: 30,color: Color.fromARGB(255, 255, 255, 255),
-
-             ),
+                Icon(
+                  popularson.icon,
+                  color: Color.fromARGB(255, 255, 255, 255),
+                  size: 30,
+                ),
               ],
-            
             ),
-         
+
             SizedBox(height: 10),
             Container(
               height: 1,
-                        
               decoration: BoxDecoration(color: Color(0xff211e25)),
             ),
           ],
@@ -74,11 +71,114 @@ class PopularSongsSection extends StatelessWidget {
     );
   }
 }
+
 List<PopSongModel> pops = [
-  PopSongModel(popDec: "popDec 1", popImage: "assets/images/cover1.webp", popTitel: "popTitel 1"),
-    PopSongModel(popDec: "popDec 2", popImage: "assets/images/cover2.png", popTitel: "popTitel 2"),
-  PopSongModel(popDec: "popDec 3", popImage: "assets/images/cover4.png", popTitel: "popTitel 3"),
-
-
+  PopSongModel(
+    popDec: "popDec",
+    popImage: "assets/images/cover4.png",
+    popTitel: "popTitel",
+      icon: Icons.more_horiz_outlined,
+  ),
+  PopSongModel(
+    popDec: "popDec",
+    popImage: "assets/images/cover2.png",
+    popTitel: "popTitel",
+     icon: Icons.more_horiz_outlined,
+  ),
+  PopSongModel(
+    popDec: "popDec",
+    popImage: "assets/images/cover1.webp",
+    popTitel: "popTitel",
+      icon: Icons.more_horiz_outlined,
+  ),
+  PopSongModel(
+    popDec: "popDec",
+    popImage: "assets/images/cover3.webp",
+    popTitel: "popTitel",
+      icon: Icons.more_horiz_outlined,
+  ),  PopSongModel(
+    popDec: "popDec",
+    popImage: "assets/images/cover3.webp",
+    popTitel: "popTitel",
+      icon: Icons.more_horiz_outlined,
+  ),
+    PopSongModel(
+    popDec: "popDec",
+    popImage: "assets/images/cover3.webp",
+    popTitel: "popTitel",
+      icon: Icons.more_horiz_outlined,
+  ),
+    PopSongModel(
+    popDec: "popDec",
+    popImage: "assets/images/cover3.webp",
+    popTitel: "popTitel",
+      icon: Icons.more_horiz_outlined,
+  ),
+    PopSongModel(
+    popDec: "popDec",
+    popImage: "assets/images/cover3.webp",
+    popTitel: "popTitel",
+      icon: Icons.more_horiz_outlined,
+  ),
+    PopSongModel(
+    popDec: "popDec",
+    popImage: "assets/images/cover3.webp",
+    popTitel: "popTitel",
+      icon: Icons.more_horiz_outlined,
+  ),
+    PopSongModel(
+    popDec: "popDec",
+    popImage: "assets/images/cover3.webp",
+    popTitel: "popTitel",
+      icon: Icons.more_horiz_outlined,
+  ),
+    PopSongModel(
+    popDec: "popDec",
+    popImage: "assets/images/cover3.webp",
+    popTitel: "popTitel",
+      icon: Icons.more_horiz_outlined,
+  ),
+    PopSongModel(
+    popDec: "popDec",
+    popImage: "assets/images/cover3.webp",
+    popTitel: "popTitel",
+      icon: Icons.more_horiz_outlined,
+  ),
+    PopSongModel(
+    popDec: "popDec",
+    popImage: "assets/images/cover3.webp",
+    popTitel: "popTitel",
+      icon: Icons.more_horiz_outlined,
+  ),
+    PopSongModel(
+    popDec: "popDec",
+    popImage: "assets/images/cover3.webp",
+    popTitel: "popTitel",
+      icon: Icons.more_horiz_outlined,
+  ),
+    PopSongModel(
+    popDec: "popDec",
+    popImage: "assets/images/cover3.webp",
+    popTitel: "popTitel",
+      icon: Icons.more_horiz_outlined,
+  ),
+    PopSongModel(
+    popDec: "popDec",
+    popImage: "assets/images/cover3.webp",
+    popTitel: "popTitel",
+      icon: Icons.more_horiz_outlined,
+  ),
+    PopSongModel(
+    popDec: "popDec",
+    popImage: "assets/images/cover3.webp",
+    popTitel: "popTitel",
+      icon: Icons.more_horiz_outlined,
+  ),
+    PopSongModel(
+    popDec: "popDec",
+    popImage: "assets/images/cover3.webp",
+    popTitel: "popTitel",
+      icon: Icons.more_horiz_outlined,
+  ),
+  
 ];
-

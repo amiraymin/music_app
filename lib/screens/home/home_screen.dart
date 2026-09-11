@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:music_app/models/favorite_artists.dart';
-import 'package:music_app/models/popular_songs.dart';
-import 'package:music_app/models/top_playlists.dart';
+import 'package:music_app/screens/playlists/playlists_screen.dart';
+import 'package:music_app/screens/see_all/see_all_favorite_artists.dart';
+import 'package:music_app/screens/see_all/see_all_top_pop_songs.dart';
 import 'package:music_app/widgets/home/favorite_artists_section.dart';
 import 'package:music_app/widgets/home/home_header.dart';
 import 'package:music_app/widgets/home/popular_songs_section.dart';
@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: homeheader(),
       body: Padding(
-        padding: const EdgeInsets.all(22.0),
+        padding: const EdgeInsets.all(15.0),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -108,12 +108,22 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   SizedBox(height: 50),
                   SizedBox(width: 150),
-                  Text(
-                    "See All",
-                    style: TextStyle(
-                      fontSize: 17,
-                      fontWeight: FontWeight.w500,
-                      color: Color(0xff1e71b6),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SeeAllFavoriteArtists(),
+                        ),
+                      );
+                    },
+                    child: Text(
+                      "See All",
+                      style: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xff1e71b6),
+                      ),
                     ),
                   ),
                 ],
@@ -123,7 +133,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   SizedBox(
                     height: 200,
                     width: 366,
-
                     child: ListView.separated(
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, ind) =>
@@ -135,39 +144,47 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
-               Row(
-              children: [
-                Text(
-                  "Popular Songs",
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xffFFFFFF),
+              Row(
+                children: [
+                  Text(
+                    "Popular Songs",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xffFFFFFF),
+                    ),
                   ),
-                ),
-                SizedBox(height: 50),
-                SizedBox(width: 177),
-                Text(
-                  "See All",
-                  style: TextStyle(
-                    fontSize: 17,
-                    fontWeight: FontWeight.w500,
-                    color: Color(0xff1e71b6),
+                  SizedBox(height: 50),
+                  SizedBox(width: 177),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SeeAllTopPopSongs(),
+                        ),
+                      );
+                    },
+                    child: Text(
+                      "See All",
+                      style: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xff1e71b6),
+                      ),
+                    ),
                   ),
-                ),
-              ],
-            ),
+                ],
+              ),
               Row(
                 children: [
                   SizedBox(
                     height: 200,
                     width: 366,
-
                     child: ListView.separated(
                       scrollDirection: Axis.vertical,
                       itemBuilder: (context, i) =>
                           PopularSongsSection(popularson: pops[i]),
-
                       separatorBuilder: (context, i) => SizedBox(width: 10),
                       itemCount: pops.length,
                     ),
@@ -181,4 +198,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
