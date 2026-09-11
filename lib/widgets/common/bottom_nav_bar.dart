@@ -12,65 +12,55 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-  int currentIndex = 0; // Track the current index of the selected item
-  List<Widget> screens = [
-    HomeScreen(),
-    SearchScreen(),
-    PlaylistsScreen(),
-    ProfileScreen(),
+  int currentIndex = 0;
+
+  final List<Widget> screens = [
+    const HomeScreen(),
+    const SearchScreen(),
+    const PlaylistsScreen(),
+    const ProfileScreen(),
   ];
-  // Add your pages here
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF120F16),
       body: screens[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: const Color(0xFF120F16),
         type: BottomNavigationBarType.fixed,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            activeIcon: Icon(Icons.home, size: 30, color: Color(0xff2ca2f8)),
-            icon: Icon(Icons.home_rounded, size: 30, color: Color(0xffFFFFFF)),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            activeIcon: Icon(Icons.search, size: 30, color: Color(0xff2ca2f8)),
-            icon: Icon(Icons.search, size: 30, color: Color(0xffFFFFFF)),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            activeIcon: Icon(
-              Icons.library_music_outlined,
-              size: 30,
-              color: Color(0xff2ca2f8),
-            ),
-            icon: Icon(
-              Icons.library_music_outlined,
-              size: 30,
-              color: Color(0xffFFFFFF),
-            ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            activeIcon: Icon(Icons.person, size: 30, color: Color(0xff2ca2f8)),
-            icon: Icon(
-              Icons.person_outline_sharp,
-              size: 30,
-              color: Color(0xffFFFFFF),
-            ),
-            label: '',
-          ),
-        ],
-        currentIndex:
-            currentIndex, // Set the current index of the selected item
-        selectedItemColor: Colors.blue, // Set the color of the selected item
+        currentIndex: currentIndex,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        selectedItemColor: const Color(0xFF2CA2F8),
+        unselectedItemColor: Colors.white,
         onTap: (index) {
           setState(() {
             currentIndex = index;
           });
-          // Handle navigation based on the selected index
         },
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            activeIcon: Icon(Icons.home, size: 28, color: Color(0xFF2CA2F8)),
+            icon: Icon(Icons.home_outlined, size: 28, color: Colors.white),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            activeIcon: Icon(Icons.search, size: 28, color: Color(0xFF2CA2F8)),
+            icon: Icon(Icons.search, size: 28, color: Colors.white),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            activeIcon: Icon(Icons.library_music, size: 28, color: Color(0xFF2CA2F8)),
+            icon: Icon(Icons.library_music_outlined, size: 28, color: Colors.white),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            activeIcon: Icon(Icons.person, size: 28, color: Color(0xFF2CA2F8)),
+            icon: Icon(Icons.person_outline, size: 28, color: Colors.white),
+            label: '',
+          ),
+        ],
       ),
     );
   }
