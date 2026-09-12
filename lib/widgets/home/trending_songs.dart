@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:music_app/models/trending_song.dart';
 import 'dart:ui';
 
+import 'package:music_app/screens/player/play_song_screen.dart';
+
 class TrendingSongs extends StatelessWidget {
   final TrendingModel trendModel;
 
@@ -82,10 +84,20 @@ class TrendingSongs extends StatelessWidget {
                           color: const Color(0xff2ba2f7),
                           borderRadius: BorderRadius.circular(12.0),
                         ),
-                        child: const Icon(
-                          Icons.play_arrow,
-                          color: Colors.white,
-                          size: 20,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => PlaySongScreen(trendingplayer: trendModel),
+                              ),
+                            );
+                          },
+                          child: const Icon(
+                            Icons.play_arrow,
+                            color: Colors.white,
+                            size: 20,
+                          ),
                         ),
                       ),
                     ],
@@ -101,9 +113,24 @@ class TrendingSongs extends StatelessWidget {
 }
 
 List<TrendingModel> trendList = [
-  TrendingModel(songTitle: "songTitle 1", artistName: "artistName 1", coverImage: "assets/images/cover4.png"),
-  TrendingModel(songTitle: "songTitle 2", artistName: "artistName 2", coverImage: "assets/images/cover1.webp"),
-  TrendingModel(songTitle: "songTitle 3", artistName: "artistName 3", coverImage: "assets/images/cover3.webp"),
-  TrendingModel(songTitle: "songTitle 4", artistName: "artistName 4", coverImage: "assets/images/cover2.png"),
- 
+  TrendingModel(
+    songTitle: "songTitle 1",
+    artistName: "artistName 1",
+    coverImage: "assets/images/cover4.png",
+  ),
+  TrendingModel(
+    songTitle: "songTitle 2",
+    artistName: "artistName 2",
+    coverImage: "assets/images/cover1.webp",
+  ),
+  TrendingModel(
+    songTitle: "songTitle 3",
+    artistName: "artistName 3",
+    coverImage: "assets/images/cover3.webp",
+  ),
+  TrendingModel(
+    songTitle: "songTitle 4",
+    artistName: "artistName 4",
+    coverImage: "assets/images/cover2.png",
+  ),
 ];

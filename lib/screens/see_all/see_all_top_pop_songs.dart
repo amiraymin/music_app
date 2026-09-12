@@ -19,7 +19,7 @@ class _SeeAllTopPopSongsState extends State<SeeAllTopPopSongs> {
         surfaceTintColor: Colors.transparent,
         scrolledUnderElevation: 0,
         backgroundColor: Color(0xff120f16),
-    
+
         title: Text(
           "Popular Songs",
           style: TextStyle(
@@ -32,8 +32,8 @@ class _SeeAllTopPopSongsState extends State<SeeAllTopPopSongs> {
           onTap: () {
             Navigator.pop(
               context,
-               MaterialPageRoute(
-                builder: (context)=> HomeScreen()));
+              MaterialPageRoute(builder: (context) => HomeScreen()),
+            );
           },
           child: Icon(
             Icons.arrow_back_ios_outlined,
@@ -42,7 +42,7 @@ class _SeeAllTopPopSongsState extends State<SeeAllTopPopSongs> {
           ),
         ),
       ),
-    
+
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(15.0),

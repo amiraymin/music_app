@@ -69,7 +69,7 @@ class TermsAndConditionsScreen extends StatelessWidget {
                   fontWeight: FontWeight.w400,
                 ),
               ),
-              
+
               const SizedBox(height: 20),
             ],
           ),

@@ -20,12 +20,14 @@ class AddPlaylistBottom extends StatelessWidget {
           children: [
             Text(
               "Create New Playlist",
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold,color: Color.fromARGB(255, 255, 255, 255)),
-              
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                color: Color.fromARGB(255, 255, 255, 255),
+              ),
             ),
             SizedBox(height: 20),
             TextFormField(
-            
               onTapOutside: (event) {
                 FocusScope.of(context).unfocus();
               },
@@ -53,12 +55,12 @@ class AddPlaylistBottom extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 35,),
-            
+            SizedBox(height: 35),
+
             Row(
               children: [
-                SizedBox(width: 5,),
-            SizedBox(
+                SizedBox(width: 5),
+                SizedBox(
                   height: 70,
                   width: 180,
                   child: ElevatedButton(
@@ -79,15 +81,13 @@ class AddPlaylistBottom extends StatelessWidget {
                       "Cancel",
                       style: TextStyle(
                         color: Color.fromARGB(255, 255, 255, 255),
-                        fontSize: 25
-                        
+                        fontSize: 25,
                       ),
                     ),
                   ),
                 ),
 
-
-                 SizedBox(width:15),
+                SizedBox(width: 15),
 
                 SizedBox(
                   height: 70,
@@ -110,8 +110,7 @@ class AddPlaylistBottom extends StatelessWidget {
                       "Create",
                       style: TextStyle(
                         color: Color.fromARGB(255, 255, 255, 255),
-                        fontSize: 25
-                        
+                        fontSize: 25,
                       ),
                     ),
                   ),

@@ -51,8 +51,16 @@ class _BottomNavBarState extends State<BottomNavBar> {
             label: '',
           ),
           BottomNavigationBarItem(
-            activeIcon: Icon(Icons.library_music, size: 28, color: Color(0xFF2CA2F8)),
-            icon: Icon(Icons.library_music_outlined, size: 28, color: Colors.white),
+            activeIcon: Icon(
+              Icons.library_music,
+              size: 28,
+              color: Color(0xFF2CA2F8),
+            ),
+            icon: Icon(
+              Icons.library_music_outlined,
+              size: 28,
+              color: Colors.white,
+            ),
             label: '',
           ),
           BottomNavigationBarItem(

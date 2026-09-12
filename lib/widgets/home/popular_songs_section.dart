@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/models/popular_songs.dart';
+import 'package:music_app/screens/player/minimized_player_screen.dart';
+import 'package:music_app/widgets/player/mini_player.dart';
 
 class PopularSongsSection extends StatelessWidget {
   final PopSongModel popularson;
@@ -13,51 +15,62 @@ class PopularSongsSection extends StatelessWidget {
         Column(
           children: [
             SizedBox(height: 10),
-            Row(
-              children: [
-                Container(
-                  height: 80,
-                  width: 80,
-
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: Color.fromARGB(255, 255, 255, 255),
-                    image: DecorationImage(
-                      image: AssetImage(popularson.popImage),
-                      fit: BoxFit.cover,
+            GestureDetector(
+              onTap: () {
+                showModalBottomSheet(
+                  context: context,
+                  builder: (context) {
+                    return MiniPlayer(popminy: popularson);
+                  },
+                );
+              },
+              child: Row(
+                children: [
+                  Container(
+                     
+                    height: 80,
+                    width: 80,
+              
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Color.fromARGB(255, 255, 255, 255),
+                      image: DecorationImage(
+                        image: AssetImage(popularson.popImage),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
-                ),
-                SizedBox(width: 10),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        popularson.popTitel,
-                        style: TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.w400,
-                          color: Color.fromARGB(255, 255, 255, 255),
+                  SizedBox(width: 10),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          popularson.popTitel,
+                          style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.w400,
+                            color: Color.fromARGB(255, 255, 255, 255),
+                          ),
                         ),
-                      ),
-                      Text(
-                        popularson.popDec,
-                        style: TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.w400,
-                          color: Color.fromARGB(255, 255, 255, 255),
+                        Text(
+                          popularson.popDec,
+                          style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.w400,
+                            color: Color.fromARGB(255, 255, 255, 255),
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-                Icon(
-                  popularson.icon,
-                  color: Color.fromARGB(255, 255, 255, 255),
-                  size: 30,
-                ),
-              ],
+                  Icon(
+                    popularson.icon,
+                    color: Color.fromARGB(255, 255, 255, 255),
+                    size: 30,
+                  ),
+                ],
+              ),
             ),
 
             SizedBox(height: 10),
