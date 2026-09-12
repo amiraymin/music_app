@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:music_app/screens/playlists/playlists_screen.dart';
+import 'package:music_app/models/top_playlists.dart';
 import 'package:music_app/screens/see_all/see_all_favorite_artists.dart';
+import 'package:music_app/screens/see_all/see_all_top_playlist.dart';
 import 'package:music_app/screens/see_all/see_all_top_pop_songs.dart';
 import 'package:music_app/widgets/home/favorite_artists_section.dart';
 import 'package:music_app/widgets/home/home_header.dart';
@@ -40,6 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               SizedBox(height: 16),
+              // Trending songs
               Row(
                 children: [
                   SizedBox(
@@ -55,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
-
+              // Top Playlists
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -69,20 +71,30 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   SizedBox(height: 50),
                   SizedBox(width: 192),
-                  Text(
-                    "See All",
-                    style: TextStyle(
-                      fontSize: 17,
-                      fontWeight: FontWeight.w500,
-                      color: Color(0xff1e71b6),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SeeAllTopPlaylist(),
+                        ),
+                      );
+                    },
+                    child: Text(
+                      "See All",
+                      style: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xff1e71b6),
+                      ),
                     ),
                   ),
                 ],
               ),
-
               Row(
                 children: [
                   SizedBox(
+                    
                     height: 220,
                     width: 366,
                     child: ListView.separated(
@@ -95,6 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
+              // Favorite Artists
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -144,6 +157,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
+              // Popular Songs
               Row(
                 children: [
                   Text(

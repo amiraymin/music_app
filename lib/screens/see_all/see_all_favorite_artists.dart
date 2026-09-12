@@ -19,7 +19,7 @@ class _SeeAllFavoriteArtistsState extends State<SeeAllFavoriteArtists> {
         surfaceTintColor: Colors.transparent,
         scrolledUnderElevation: 0,
         backgroundColor: Color(0xff120f16),
-    
+
         title: Text(
           "Favorite Artists",
           style: TextStyle(
@@ -32,8 +32,8 @@ class _SeeAllFavoriteArtistsState extends State<SeeAllFavoriteArtists> {
           onTap: () {
             Navigator.pop(
               context,
-               MaterialPageRoute(
-                builder: (context)=> HomeScreen()));
+              MaterialPageRoute(builder: (context) => HomeScreen()),
+            );
           },
           child: Icon(
             Icons.arrow_back_ios_outlined,
@@ -42,7 +42,7 @@ class _SeeAllFavoriteArtistsState extends State<SeeAllFavoriteArtists> {
           ),
         ),
       ),
-    
+
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(15.0),
@@ -56,7 +56,7 @@ class _SeeAllFavoriteArtistsState extends State<SeeAllFavoriteArtists> {
                   icon: Icons.arrow_forward_ios_rounded,
                 ),
               ),
-               PopularSongsSection(
+              PopularSongsSection(
                 popularson: PopSongModel(
                   popDec: "",
                   popImage: "assets/images/cover4.png",
@@ -64,7 +64,7 @@ class _SeeAllFavoriteArtistsState extends State<SeeAllFavoriteArtists> {
                   icon: Icons.arrow_forward_ios_rounded,
                 ),
               ),
-               PopularSongsSection(
+              PopularSongsSection(
                 popularson: PopSongModel(
                   popDec: "",
                   popImage: "assets/images/cover4.png",
@@ -72,7 +72,7 @@ class _SeeAllFavoriteArtistsState extends State<SeeAllFavoriteArtists> {
                   icon: Icons.arrow_forward_ios_rounded,
                 ),
               ),
-               PopularSongsSection(
+              PopularSongsSection(
                 popularson: PopSongModel(
                   popDec: "",
                   popImage: "assets/images/cover4.png",
@@ -80,7 +80,7 @@ class _SeeAllFavoriteArtistsState extends State<SeeAllFavoriteArtists> {
                   icon: Icons.arrow_forward_ios_rounded,
                 ),
               ),
-               PopularSongsSection(
+              PopularSongsSection(
                 popularson: PopSongModel(
                   popDec: "",
                   popImage: "assets/images/cover4.png",
@@ -88,7 +88,7 @@ class _SeeAllFavoriteArtistsState extends State<SeeAllFavoriteArtists> {
                   icon: Icons.arrow_forward_ios_rounded,
                 ),
               ),
-               PopularSongsSection(
+              PopularSongsSection(
                 popularson: PopSongModel(
                   popDec: "",
                   popImage: "assets/images/cover4.png",
@@ -96,7 +96,7 @@ class _SeeAllFavoriteArtistsState extends State<SeeAllFavoriteArtists> {
                   icon: Icons.arrow_forward_ios_rounded,
                 ),
               ),
-               PopularSongsSection(
+              PopularSongsSection(
                 popularson: PopSongModel(
                   popDec: "",
                   popImage: "assets/images/cover4.png",
@@ -104,7 +104,7 @@ class _SeeAllFavoriteArtistsState extends State<SeeAllFavoriteArtists> {
                   icon: Icons.arrow_forward_ios_rounded,
                 ),
               ),
-               PopularSongsSection(
+              PopularSongsSection(
                 popularson: PopSongModel(
                   popDec: "",
                   popImage: "assets/images/cover4.png",
@@ -112,7 +112,7 @@ class _SeeAllFavoriteArtistsState extends State<SeeAllFavoriteArtists> {
                   icon: Icons.arrow_forward_ios_rounded,
                 ),
               ),
-               PopularSongsSection(
+              PopularSongsSection(
                 popularson: PopSongModel(
                   popDec: "",
                   popImage: "assets/images/cover4.png",
@@ -120,7 +120,7 @@ class _SeeAllFavoriteArtistsState extends State<SeeAllFavoriteArtists> {
                   icon: Icons.arrow_forward_ios_rounded,
                 ),
               ),
-               PopularSongsSection(
+              PopularSongsSection(
                 popularson: PopSongModel(
                   popDec: "",
                   popImage: "assets/images/cover4.png",
@@ -128,7 +128,7 @@ class _SeeAllFavoriteArtistsState extends State<SeeAllFavoriteArtists> {
                   icon: Icons.arrow_forward_ios_rounded,
                 ),
               ),
-               PopularSongsSection(
+              PopularSongsSection(
                 popularson: PopSongModel(
                   popDec: "",
                   popImage: "assets/images/cover4.png",
@@ -136,7 +136,7 @@ class _SeeAllFavoriteArtistsState extends State<SeeAllFavoriteArtists> {
                   icon: Icons.arrow_forward_ios_rounded,
                 ),
               ),
-               PopularSongsSection(
+              PopularSongsSection(
                 popularson: PopSongModel(
                   popDec: "",
                   popImage: "assets/images/cover4.png",
@@ -144,7 +144,7 @@ class _SeeAllFavoriteArtistsState extends State<SeeAllFavoriteArtists> {
                   icon: Icons.arrow_forward_ios_rounded,
                 ),
               ),
-               PopularSongsSection(
+              PopularSongsSection(
                 popularson: PopSongModel(
                   popDec: "",
                   popImage: "assets/images/cover4.png",
@@ -152,7 +152,7 @@ class _SeeAllFavoriteArtistsState extends State<SeeAllFavoriteArtists> {
                   icon: Icons.arrow_forward_ios_rounded,
                 ),
               ),
-               PopularSongsSection(
+              PopularSongsSection(
                 popularson: PopSongModel(
                   popDec: "",
                   popImage: "assets/images/cover4.png",
@@ -160,7 +160,7 @@ class _SeeAllFavoriteArtistsState extends State<SeeAllFavoriteArtists> {
                   icon: Icons.arrow_forward_ios_rounded,
                 ),
               ),
-               PopularSongsSection(
+              PopularSongsSection(
                 popularson: PopSongModel(
                   popDec: "",
                   popImage: "assets/images/cover4.png",
@@ -168,7 +168,7 @@ class _SeeAllFavoriteArtistsState extends State<SeeAllFavoriteArtists> {
                   icon: Icons.arrow_forward_ios_rounded,
                 ),
               ),
-               PopularSongsSection(
+              PopularSongsSection(
                 popularson: PopSongModel(
                   popDec: "",
                   popImage: "assets/images/cover4.png",
@@ -176,7 +176,7 @@ class _SeeAllFavoriteArtistsState extends State<SeeAllFavoriteArtists> {
                   icon: Icons.arrow_forward_ios_rounded,
                 ),
               ),
-               PopularSongsSection(
+              PopularSongsSection(
                 popularson: PopSongModel(
                   popDec: "",
                   popImage: "assets/images/cover4.png",
@@ -184,7 +184,7 @@ class _SeeAllFavoriteArtistsState extends State<SeeAllFavoriteArtists> {
                   icon: Icons.arrow_forward_ios_rounded,
                 ),
               ),
-               PopularSongsSection(
+              PopularSongsSection(
                 popularson: PopSongModel(
                   popDec: "",
                   popImage: "assets/images/cover4.png",
@@ -192,7 +192,6 @@ class _SeeAllFavoriteArtistsState extends State<SeeAllFavoriteArtists> {
                   icon: Icons.arrow_forward_ios_rounded,
                 ),
               ),
-        
             ],
           ),
         ),

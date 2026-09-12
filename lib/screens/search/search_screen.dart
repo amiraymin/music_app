@@ -11,8 +11,32 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
+  final TextEditingController _searchController = TextEditingController();
+  int _selectedCategoryIndex = 0;
+
+  List<PopSongModel> get _matchingSongs {
+    final searchText = _searchController.text.toLowerCase().trim();
+
+    if (searchText.isEmpty) {
+      return pops;
+    }
+
+    return pops.where((song) {
+      return song.popTitel.toLowerCase().contains(searchText) ||
+          song.popDec.toLowerCase().contains(searchText);
+    }).toList();
+  }
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
+    final matchingSongs = _matchingSongs;
+
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(15.0),
@@ -23,6 +47,8 @@ class _SearchScreenState extends State<SearchScreen> {
             children: [
               SizedBox(height: 60),
               TextFormField(
+                controller: _searchController,
+                onChanged: (_) => setState(() {}),
                 onTapOutside: (event) {
                   FocusScope.of(context).unfocus();
                 },
@@ -62,57 +88,35 @@ class _SearchScreenState extends State<SearchScreen> {
               ),
               SizedBox(height: 20),
 
-              Row(
-                children: [
-                  Expanded(
-                    child: SizedBox(
-                      height: 40,
-                      width: 100,
-                      child: ListView.separated(
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (context, index) =>
-                            Caragories(categoris: catagoriesList[index]),
-                        separatorBuilder: (context, index) =>
-                            SizedBox(width: 5),
-                        itemCount: catagoriesList.length,
-                      ),
-                    ),
-                  ),
-                ],
+              SizedBox(
+                height: 40,
+                child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: catagoriesList.length,
+                  itemBuilder: (context, index) {
+                    return Caragories(
+                      categoris: catagoriesList[index],
+                      isSelected: index == _selectedCategoryIndex,
+                      onTap: () {
+                        setState(() => _selectedCategoryIndex = index);
+                      },
+                    );
+                  },
+                  separatorBuilder: (context, index) => const SizedBox(width: 8),
+                ),
               ),
               SizedBox(height: 35),
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "popDec",
-                  popImage: "assets/images/cover4.png",
-                  popTitel: "popTitel",
-                icon: Icons.more_horiz_outlined,
+              if (matchingSongs.isEmpty)
+                const Center(
+                  child: Text(
+                    'No songs found',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                )
+              else
+                ...matchingSongs.map(
+                  (song) => PopularSongsSection(popularson: song),
                 ),
-              ),
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "popDec",
-                  popImage: "assets/images/cover2.png",
-                  popTitel: "popTitel",
-                   icon: Icons.more_horiz_outlined,
-                ),
-              ),
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "popDec",
-                  popImage: "assets/images/cover1.webp",
-                  popTitel: "popTitel",
-                    icon: Icons.more_horiz_outlined,
-                ),
-              ),
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "popDec",
-                  popImage: "assets/images/cover3.webp",
-                  popTitel: "popTitel",
-                  icon: Icons.more_horiz_outlined,
-                ),
-              ),
             ],
           ),
         ),

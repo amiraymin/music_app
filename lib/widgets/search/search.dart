@@ -3,32 +3,40 @@ import 'package:music_app/models/catagories.dart';
 
 class Caragories extends StatelessWidget {
   final CategoriesModel categoris;
-  const Caragories({super.key, required this.categoris});
+  final bool isSelected;
+  final VoidCallback onTap;
+
+  const Caragories({
+    super.key,
+    required this.categoris,
+    required this.isSelected,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-          height: 40,
-          width: 100,
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        height: 40,
+        width: 100,
 
-          decoration: BoxDecoration(
-            color: Color(0xff1e71b6),
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: Center(
-            child: Text(
-              categoris.catiName,
-              style: TextStyle(
-                fontSize: 15,
-                color: Color.fromARGB(255, 255, 255, 255),
-                fontWeight: FontWeight(350),
-              ),
+        decoration: BoxDecoration(
+          color: isSelected ? const Color(0xff2ba2f7) : const Color(0xff302d34),
+          borderRadius: BorderRadius.circular(10),
+          
+        ),
+        child: Center(
+          child: Text(
+            categoris.catiName,
+            style: TextStyle(
+              fontSize: 15,
+              color: Color.fromARGB(255, 255, 255, 255),
+              fontWeight: FontWeight.w400,
             ),
           ),
         ),
-      ],
+      ),
     );
   }
 }
