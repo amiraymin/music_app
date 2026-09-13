@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:music_app/models/catagories.dart';
+import 'package:music_app/models/category.dart';
 
 class Caragories extends StatefulWidget {
   final CategoriesModel categoris;

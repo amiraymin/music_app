@@ -1,8 +1,7 @@
-
 class TrendingModel {
-  String songTitle;
-  String artistName;
-  String coverImage;
+  final String songTitle;
+  final String artistName;
+  final String coverImage;
 
   TrendingModel({
     required this.songTitle,

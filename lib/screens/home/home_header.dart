@@ -30,8 +30,6 @@ AppBar homeheader() {
   );
 }
 
-
-
 class Welcome extends StatelessWidget {
   const Welcome({super.key});
 
@@ -58,8 +56,6 @@ class Welcome extends StatelessWidget {
   }
 }
 
-
-
 class SearchBox extends StatefulWidget {
   const SearchBox({super.key});
 
@@ -74,10 +70,7 @@ class _SearchBoxState extends State<SearchBox> {
       children: [
         Expanded(
           child: TextFormField(
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-            ),
+            style: const TextStyle(color: Colors.white, fontSize: 20),
             onTapOutside: (event) {
               FocusScope.of(context).unfocus();
             },

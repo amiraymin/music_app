@@ -1,6 +1,6 @@
 class FavoriteArtModel {
-  String actorName;
-   String actorImage;
+  final String actorName;
+  final  String actorImage;
 
   FavoriteArtModel({
     required this.actorName,

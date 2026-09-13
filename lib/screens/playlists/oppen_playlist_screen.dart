@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/models/top_playlists.dart';
+import 'package:music_app/screens/playlists/add_songs.dart';
 import 'package:music_app/widgets/home/popular_songs_section.dart';
 
 class OppenPlaylistScreen extends StatefulWidget {
@@ -31,8 +32,6 @@ class _OppenPlaylistScreenState extends State<OppenPlaylistScreen> {
                       width: double.infinity,
                       fit: BoxFit.cover,
                     ),
-          
-                
                     Positioned.fill(
                       child: Container(
                         decoration: BoxDecoration(
@@ -47,7 +46,7 @@ class _OppenPlaylistScreenState extends State<OppenPlaylistScreen> {
                         ),
                       ),
                     ),
-          
+
                     SafeArea(
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
@@ -65,18 +64,31 @@ class _OppenPlaylistScreenState extends State<OppenPlaylistScreen> {
                               ),
                             ),
                             Row(
-                              children: const [
-                                Icon(Icons.add_circle_outline, color: Colors.white),
-                                SizedBox(width: 12),
-                                Icon(Icons.more_vert, color: Colors.white),
+                              children: [
+                                IconButton(
+                                  onPressed: () {
+                                    Navigator.push(context,
+                                     MaterialPageRoute(builder: ((context) =>AddSongsScreen() )));
+                                  },
+                                  icon: const Icon(
+                                    Icons.add_circle_outline,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                const SizedBox(width: 12),
+                                const Icon(
+                                  Icons.more_vert,
+                                  color: Colors.white,
+                                ),
                               ],
                             ),
                           ],
                         ),
                       ),
                     ),
-          
-                    // title + subtitle near the bottom of the image
+                    /*
+                     title + subtitle near the bottom of the image
+                     */
                     Positioned(
                       bottom: 90,
                       left: 0,
@@ -103,7 +115,9 @@ class _OppenPlaylistScreenState extends State<OppenPlaylistScreen> {
                         ],
                       ),
                     ),
-          
+                    /*
+                       Play bottom
+                       */
                     Positioned(
                       bottom: 20,
                       left: 0,
@@ -123,7 +137,10 @@ class _OppenPlaylistScreenState extends State<OppenPlaylistScreen> {
                               ),
                               label: const Text(
                                 "Play",
-                                style: TextStyle(color: Colors.white, fontSize: 15),
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                ),
                               ),
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: const Color(0xff2ba2f7),
@@ -133,6 +150,9 @@ class _OppenPlaylistScreenState extends State<OppenPlaylistScreen> {
                               ),
                             ),
                           ),
+                          /*
+                            Shuffle bottom
+                          */
                           SizedBox(
                             height: 60,
                             width: 155,
@@ -145,7 +165,10 @@ class _OppenPlaylistScreenState extends State<OppenPlaylistScreen> {
                               ),
                               label: const Text(
                                 "Shuffle",
-                                style: TextStyle(color: Colors.black, fontSize: 15),
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15,
+                                ),
                               ),
                               style: OutlinedButton.styleFrom(
                                 backgroundColor: const Color(0xffbdb9b7),
@@ -161,14 +184,14 @@ class _OppenPlaylistScreenState extends State<OppenPlaylistScreen> {
                   ],
                 ),
               ),
-          
+              /*
+                popular songs column
+              */
               Padding(
-                padding: const EdgeInsets.only(left: 15,right: 15),
+                padding: const EdgeInsets.only(left: 15, right: 15),
                 child: Column(
-                  
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                   
                     ListView.builder(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),

@@ -30,11 +30,13 @@ class _PlaylistsScreenState extends State<PlaylistsScreen> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          leading: Icon(
-            Icons.arrow_back_ios_outlined,
-            color: Color.fromARGB(255, 255, 255, 255),
-            size: 30,
-          ),
+          leading: IconButton(
+            onPressed:()=> Navigator.pop(context),
+            icon:  Icon(
+    Icons.arrow_back_ios_outlined,
+    color: Color.fromARGB(255, 255, 255, 255),
+    size: 30,
+  ),)
         ),
 
         floatingActionButton: FloatingActionButton(
