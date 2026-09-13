@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'privacy_screen.dart'; // استيراد شاشة سياسة الخصوصية
 
 class TermsAndConditionsScreen extends StatelessWidget {
   const TermsAndConditionsScreen({super.key});
@@ -38,7 +39,7 @@ class TermsAndConditionsScreen extends StatelessWidget {
               Text(
                 'Please read these terms of service, carefully before using our app operated by us.',
                 style: TextStyle(
-                  color: Colors.white.withOpacity(0.9),
+                  color: Colors.white.withValues(alpha: 0.9),
                   fontSize: 15,
                   height: 1.4,
                   fontWeight: FontWeight.w400,
@@ -63,10 +64,40 @@ class TermsAndConditionsScreen extends StatelessWidget {
               Text(
                 "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
                 style: TextStyle(
-                  color: Colors.white.withOpacity(0.7),
+                  color: Colors.white.withValues(alpha: 0.7),
                   fontSize: 14,
                   height: 1.5,
                   fontWeight: FontWeight.w400,
+                ),
+              ),
+
+              const SizedBox(height: 30),
+
+              // Next Page Button / Arrow (مُفعَّل للانتقال)
+              Align(
+                alignment: Alignment.centerRight,
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(30),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const PrivacyScreen(),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.all(12),
+                    decoration: const BoxDecoration(
+                      color: Color(0xFF2CA2F8),
+                      shape: BoxShape.circle,
+                    ),
+                    child: const Icon(
+                      Icons.arrow_forward_ios_rounded,
+                      color: Colors.white,
+                      size: 18,
+                    ),
+                  ),
                 ),
               ),
 
