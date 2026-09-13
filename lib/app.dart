@@ -1,6 +1,5 @@
-
 import 'package:flutter/material.dart';
-import 'package:music_app/screens/auth/auth_flow.dart';
+import 'package:music_app/screens/auth/splash_screen.dart';
 
 class MusicApp extends StatelessWidget {
   const MusicApp({super.key});
@@ -8,11 +7,8 @@ class MusicApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        scaffoldBackgroundColor: const Color(0xFF120F16),
-      ),
+      theme: ThemeData(scaffoldBackgroundColor: const Color(0xFF120F16)),
       home: const SplashScreen(),
     );
   }
 }
-
