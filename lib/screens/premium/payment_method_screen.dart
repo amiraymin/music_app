@@ -58,7 +58,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                   children: [
                     const SizedBox(height: 20),
 
-                    // 1. Debit/Credit Card Option
+                
                     InkWell(
                       borderRadius: BorderRadius.circular(16),
                       onTap: () => setState(() => selectedMethod = 0),
@@ -94,7 +94,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                     ),
                     const SizedBox(height: 16),
 
-                    // Inputs Form (Only visible when Credit Card is selected)
+            
                     if (selectedMethod == 0) ...[
                       _buildInputField(
                         controller: cardNumberController,
@@ -125,7 +125,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                       const SizedBox(height: 20),
                     ],
 
-                    // 2. Paypal Option
+          
                     InkWell(
                       borderRadius: BorderRadius.circular(16),
                       onTap: () => setState(() => selectedMethod = 1),
@@ -170,7 +170,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                     ),
                     const SizedBox(height: 12),
 
-                    // 3. Google Pay Option
+          
                     InkWell(
                       borderRadius: BorderRadius.circular(16),
                       onTap: () => setState(() => selectedMethod = 2),
@@ -213,7 +213,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
               ),
             ),
 
-            // Pay Now Button (ينقل لشاشة OrderReviewScreen)
+          
             Padding(
               padding: const EdgeInsets.all(20),
               child: SizedBox(
@@ -252,7 +252,6 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
     );
   }
 
-  // Custom Radio Button Widget matching design
   Widget _buildRadioButton(bool isSelected, Color activeColor) {
     return Container(
       width: 22,
@@ -279,7 +278,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
     );
   }
 
-  // Input Field Helper
+
   Widget _buildInputField({
     required TextEditingController controller,
     required String hintText,
@@ -313,7 +312,6 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
   }
 }
 
-// Custom Painter for official Google G Logo
 class GoogleLogoPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
