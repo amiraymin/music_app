@@ -48,102 +48,18 @@ class _SeeAllTopPopSongsState extends State<SeeAllTopPopSongs> {
           padding: const EdgeInsets.all(15.0),
           child: Column(
             children: [
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "popDec",
-                  popImage: "assets/images/cover4.png",
-                  popTitel: "popTitel",
-                  icon: Icons.more_horiz_outlined,
-                ),
-              ),
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "popDec",
-                  popImage: "assets/images/cover4.png",
-                  popTitel: "popTitel",
-                  icon: Icons.more_horiz_outlined,
-                ),
-              ),
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "popDec",
-                  popImage: "assets/images/cover4.png",
-                  popTitel: "popTitel",
-                  icon: Icons.more_horiz_outlined,
-                ),
-              ),
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "popDec",
-                  popImage: "assets/images/cover4.png",
-                  popTitel: "popTitel",
-                  icon: Icons.more_horiz_outlined,
-                ),
-              ),
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "popDec",
-                  popImage: "assets/images/cover4.png",
-                  popTitel: "popTitel",
-                  icon: Icons.more_horiz_outlined,
-                ),
-              ),
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "popDec",
-                  popImage: "assets/images/cover4.png",
-                  popTitel: "popTitel",
-                  icon: Icons.more_horiz_outlined,
-                ),
-              ),
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "popDec",
-                  popImage: "assets/images/cover4.png",
-                  popTitel: "popTitel",
-                  icon: Icons.more_horiz_outlined,
-                ),
-              ),
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "popDec",
-                  popImage: "assets/images/cover4.png",
-                  popTitel: "popTitel",
-                  icon: Icons.more_horiz_outlined,
-                ),
-              ),
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "popDec",
-                  popImage: "assets/images/cover4.png",
-                  popTitel: "popTitel",
-                  icon: Icons.more_horiz_outlined,
-                ),
-              ),
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "popDec",
-                  popImage: "assets/images/cover4.png",
-                  popTitel: "popTitel",
-                  icon: Icons.more_horiz_outlined,
-                ),
-              ),
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "popDec",
-                  popImage: "assets/images/cover4.png",
-                  popTitel: "popTitel",
-                  icon: Icons.more_horiz_outlined,
-                ),
-              ),
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "popDec",
-                  popImage: "assets/images/cover4.png",
-                  popTitel: "popTitel",
-                  icon: Icons.more_horiz_outlined,
-                ),
-              ),
+             
+                SizedBox(
+                    height:.maxFinite,
+                    width: 366,
+                    child: ListView.separated(
+                      scrollDirection: Axis.vertical,
+                      itemBuilder: (context, i) =>
+                          PopularSongsSection(popularson: pops[i]),
+                      separatorBuilder: (context, i) => SizedBox(width: 10),
+                      itemCount: pops.length,
+                    ),
+                  ),
             ],
           ),
         ),

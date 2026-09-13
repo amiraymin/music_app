@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:music_app/models/favorite_artists.dart';
+import 'package:music_app/models/favorite_artists_home.dart';
 
 class FavoriteArtists extends StatelessWidget {
   
@@ -11,40 +11,47 @@ class FavoriteArtists extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              height: 130,
-              width: 130,
-              decoration: BoxDecoration(
-                color: Color.fromARGB(255, 255, 255, 255),
-                image: DecorationImage(
-                  image: AssetImage(favactor.actorImage),
-                  fit: BoxFit.cover,
+     
+        SizedBox(
+          width: 130,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                height: 130,
+                width: 130,
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 255, 255, 255),
+                  image: DecorationImage(
+                    image: AssetImage(favactor.actorImage),
+                    fit: BoxFit.cover,
+                  ),
+                  borderRadius: BorderRadius.circular(20.0),
                 ),
-                borderRadius: BorderRadius.circular(20.0),
               ),
-            ),
-            SizedBox(height: 5),
-
-            Text(
-              favactor.actorName,
-              style: TextStyle(
-                color: Color.fromARGB(255, 241, 241, 241),
-                fontWeight: FontWeight.w600,
+              SizedBox(height: 5),
+          
+              Text(
+                favactor.actorName,
+                style: TextStyle(
+                  color: Color.fromARGB(255, 255, 255, 255),
+                  fontWeight: FontWeight.w600,
+                ),
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.center,
               ),
-            ),
-         
-          ],
+           
+            ],
+          ),
         ),
-      ],
+     ],
     );
   }
 }
 
 List<FavoriteArtModel> favArtist = [
-  FavoriteArtModel(actorName: "actor 1", actorImage: "assets/images/cover4.png"),
-  FavoriteArtModel(actorName: "actor 2", actorImage: "assets/images/cover1.webp"),
-  FavoriteArtModel(actorName: "actor 3", actorImage: "assets/images/cover2.png"),
+  FavoriteArtModel(actorName: "Billie Eilish", actorImage: "assets/images/artist1.jpg"),
+  FavoriteArtModel(actorName: "sh3ban AbdelRehem", actorImage: "assets/images/artist2.jpg"),
+  FavoriteArtModel(actorName: "Wegz", actorImage: "assets/images/artist3.jpg"),
+  FavoriteArtModel(actorName: "Eminem", actorImage: "assets/images/artist4.jpg"),
 ];

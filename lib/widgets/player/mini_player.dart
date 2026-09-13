@@ -46,8 +46,11 @@ class _MiniPlayerState extends State<MiniPlayer> {
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                          fontSize: 19,
+                          
                         ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                       ),
                       Text(
                         widget.popminy.popDec,

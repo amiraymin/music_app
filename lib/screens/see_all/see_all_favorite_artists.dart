@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:music_app/models/popular_songs.dart';
 import 'package:music_app/screens/home/home_screen.dart';
-import 'package:music_app/widgets/home/popular_songs_section.dart';
+import 'package:music_app/widgets/home/favorite_artist_see_all.dart';
 
 class SeeAllFavoriteArtists extends StatefulWidget {
   const SeeAllFavoriteArtists({super.key});
@@ -43,158 +42,12 @@ class _SeeAllFavoriteArtistsState extends State<SeeAllFavoriteArtists> {
         ),
       ),
 
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: Column(
-            children: [
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "",
-                  popImage: "assets/images/cover4.png",
-                  popTitel: "PopName",
-                  icon: Icons.arrow_forward_ios_rounded,
-                ),
-              ),
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "",
-                  popImage: "assets/images/cover4.png",
-                  popTitel: "PopName",
-                  icon: Icons.arrow_forward_ios_rounded,
-                ),
-              ),
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "",
-                  popImage: "assets/images/cover4.png",
-                  popTitel: "PopName",
-                  icon: Icons.arrow_forward_ios_rounded,
-                ),
-              ),
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "",
-                  popImage: "assets/images/cover4.png",
-                  popTitel: "PopName",
-                  icon: Icons.arrow_forward_ios_rounded,
-                ),
-              ),
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "",
-                  popImage: "assets/images/cover4.png",
-                  popTitel: "PopName",
-                  icon: Icons.arrow_forward_ios_rounded,
-                ),
-              ),
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "",
-                  popImage: "assets/images/cover4.png",
-                  popTitel: "PopName",
-                  icon: Icons.arrow_forward_ios_rounded,
-                ),
-              ),
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "",
-                  popImage: "assets/images/cover4.png",
-                  popTitel: "PopName",
-                  icon: Icons.arrow_forward_ios_rounded,
-                ),
-              ),
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "",
-                  popImage: "assets/images/cover4.png",
-                  popTitel: "PopName",
-                  icon: Icons.arrow_forward_ios_rounded,
-                ),
-              ),
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "",
-                  popImage: "assets/images/cover4.png",
-                  popTitel: "PopName",
-                  icon: Icons.arrow_forward_ios_rounded,
-                ),
-              ),
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "",
-                  popImage: "assets/images/cover4.png",
-                  popTitel: "PopName",
-                  icon: Icons.arrow_forward_ios_rounded,
-                ),
-              ),
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "",
-                  popImage: "assets/images/cover4.png",
-                  popTitel: "PopName",
-                  icon: Icons.arrow_forward_ios_rounded,
-                ),
-              ),
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "",
-                  popImage: "assets/images/cover4.png",
-                  popTitel: "PopName",
-                  icon: Icons.arrow_forward_ios_rounded,
-                ),
-              ),
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "",
-                  popImage: "assets/images/cover4.png",
-                  popTitel: "PopName",
-                  icon: Icons.arrow_forward_ios_rounded,
-                ),
-              ),
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "",
-                  popImage: "assets/images/cover4.png",
-                  popTitel: "PopName",
-                  icon: Icons.arrow_forward_ios_rounded,
-                ),
-              ),
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "",
-                  popImage: "assets/images/cover4.png",
-                  popTitel: "PopName",
-                  icon: Icons.arrow_forward_ios_rounded,
-                ),
-              ),
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "",
-                  popImage: "assets/images/cover4.png",
-                  popTitel: "PopName",
-                  icon: Icons.arrow_forward_ios_rounded,
-                ),
-              ),
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "",
-                  popImage: "assets/images/cover4.png",
-                  popTitel: "PopName",
-                  icon: Icons.arrow_forward_ios_rounded,
-                ),
-              ),
-              PopularSongsSection(
-                popularson: PopSongModel(
-                  popDec: "",
-                  popImage: "assets/images/cover4.png",
-                  popTitel: "PopName",
-                  icon: Icons.arrow_forward_ios_rounded,
-                ),
-              ),
-            ],
-          ),
-        ),
+      body: ListView.separated(
+        padding: const EdgeInsets.all(15.0),
+        itemBuilder: (context, i) =>
+            FavoriteArtistSeeAll(favSeeAll: favoArtSeeAll[i]),
+        separatorBuilder: (context, i) => const SizedBox(height: 10),
+        itemCount: favoArtSeeAll.length,
       ),
     );
   }
