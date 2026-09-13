@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class FavoriteArtistsSeeallModell {
-  String image;
-  String actorName;
-  IconData actorIcon;
+ final  String image;
+ final  String actorName;
+ final  IconData actorIcon;
 
   FavoriteArtistsSeeallModell({
     required this.image,

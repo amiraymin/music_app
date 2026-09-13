@@ -10,6 +10,8 @@ class PlaySongScreen extends StatefulWidget {
 }
 
 class _PlaySongScreenState extends State<PlaySongScreen> {
+  bool isPlaying = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -106,9 +108,14 @@ class _PlaySongScreenState extends State<PlaySongScreen> {
                       shape: BoxShape.circle,
                     ),
                     child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          isPlaying = !isPlaying;                          
+                        });
+                      },
+
                       icon: Icon(
-                        Icons.play_arrow,
+                       isPlaying ? Icons.pause_sharp : Icons.play_arrow_outlined,
                         color: Colors.white,
                         size: 50,
                       ),

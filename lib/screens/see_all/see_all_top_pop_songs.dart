@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/models/popular_songs.dart';
-import 'package:music_app/screens/home/home_screen.dart';
+import 'package:music_app/screens/home/main_home_screen.dart';
 import 'package:music_app/widgets/home/popular_songs_section.dart';
 
 class SeeAllTopPopSongs extends StatefulWidget {

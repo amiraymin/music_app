@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class PlayListCardModel {
-  String playCardName;
-  String playCardDec;
-  IconData playCardIcon;
-  String playCardImage;
+  final String playCardName;
+  final String playCardDec;
+  final IconData playCardIcon;
+  final String playCardImage;
 
   PlayListCardModel({
     required this.playCardImage,
