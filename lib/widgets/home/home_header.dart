@@ -74,6 +74,10 @@ class _SearchBoxState extends State<SearchBox> {
       children: [
         Expanded(
           child: TextFormField(
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 20,
+            ),
             onTapOutside: (event) {
               FocusScope.of(context).unfocus();
             },

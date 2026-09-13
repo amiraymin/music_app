@@ -25,7 +25,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF120F16),
+
       body: screens[currentIndex],
+
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: const Color(0xFF120F16),
         type: BottomNavigationBarType.fixed,
@@ -33,7 +35,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
         showSelectedLabels: false,
         showUnselectedLabels: false,
         selectedItemColor: const Color(0xFF2CA2F8),
-        unselectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white
+        ,
         onTap: (index) {
           setState(() {
             currentIndex = index;

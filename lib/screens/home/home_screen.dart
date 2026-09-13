@@ -149,8 +149,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: ListView.separated(
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, ind) =>
-                          FavoriteArtists(favactor: favArtist[ind]),
-
+                      FavoriteArtists(favactor: favArtist[ind]),
                       separatorBuilder: (context, i) => SizedBox(width: 10),
                       itemCount: favArtist.length,
                     ),

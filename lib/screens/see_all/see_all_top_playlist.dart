@@ -10,7 +10,7 @@ class SeeAllTopPlaylist extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        titleSpacing: 100,
+        titleSpacing: 90,
         scrolledUnderElevation: 0,
         backgroundColor: Color(0xff120f16),
 

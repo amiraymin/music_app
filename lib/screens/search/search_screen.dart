@@ -2,41 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:music_app/models/popular_songs.dart';
 import 'package:music_app/widgets/home/popular_songs_section.dart';
 import 'package:music_app/widgets/search/search.dart';
-
+ 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
-
+ 
   @override
   State<SearchScreen> createState() => _SearchScreenState();
 }
-
+ 
 class _SearchScreenState extends State<SearchScreen> {
-  final TextEditingController _searchController = TextEditingController();
-  int _selectedCategoryIndex = 0;
-
-  List<PopSongModel> get _matchingSongs {
-    final searchText = _searchController.text.toLowerCase().trim();
-
-    if (searchText.isEmpty) {
-      return pops;
-    }
-
-    return pops.where((song) {
-      return song.popTitel.toLowerCase().contains(searchText) ||
-          song.popDec.toLowerCase().contains(searchText);
-    }).toList();
-  }
-
-  @override
-  void dispose() {
-    _searchController.dispose();
-    super.dispose();
-  }
-
+int selectedCategoryIndex = 0; 
   @override
   Widget build(BuildContext context) {
-    final matchingSongs = _matchingSongs;
-
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(15.0),
@@ -47,8 +24,10 @@ class _SearchScreenState extends State<SearchScreen> {
             children: [
               SizedBox(height: 60),
               TextFormField(
-                controller: _searchController,
-                onChanged: (_) => setState(() {}),
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                ),
                 onTapOutside: (event) {
                   FocusScope.of(context).unfocus();
                 },
@@ -77,7 +56,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   ),
                 ),
               ),
-
+ 
               SizedBox(height: 40),
               Text(
                 "Top Result",
@@ -87,36 +66,67 @@ class _SearchScreenState extends State<SearchScreen> {
                 ),
               ),
               SizedBox(height: 20),
-
-              SizedBox(
-                height: 40,
-                child: ListView.separated(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: catagoriesList.length,
-                  itemBuilder: (context, index) {
-                    return Caragories(
-                      categoris: catagoriesList[index],
-                      isSelected: index == _selectedCategoryIndex,
-                      onTap: () {
-                        setState(() => _selectedCategoryIndex = index);
-                      },
-                    );
-                  },
-                  separatorBuilder: (context, index) => const SizedBox(width: 8),
+ 
+              Row(
+                children: [
+                  Expanded(
+                    child: SizedBox(
+                      height: 40,
+                      child: ListView.separated(
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) => GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              selectedCategoryIndex = index;
+                            });
+                          },
+                          child: Caragories(
+                            categoris: catagoriesList[index],
+                            isSelected: selectedCategoryIndex == index,
+                          ),
+                        ),
+                        separatorBuilder: (context, index) =>
+                            SizedBox(width: 5),
+                        itemCount: catagoriesList.length,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+ 
+              SizedBox(height: 35),
+              PopularSongsSection(
+                popularson: PopSongModel(
+                  popDec: "popDec",
+                  popImage: "assets/images/cover4.png",
+                  popTitel: "popTitel",
+                  icon: Icons.more_horiz_outlined,
                 ),
               ),
-              SizedBox(height: 35),
-              if (matchingSongs.isEmpty)
-                const Center(
-                  child: Text(
-                    'No songs found',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                )
-              else
-                ...matchingSongs.map(
-                  (song) => PopularSongsSection(popularson: song),
+              PopularSongsSection(
+                popularson: PopSongModel(
+                  popDec: "popDec",
+                  popImage: "assets/images/cover2.png",
+                  popTitel: "popTitel",
+                  icon: Icons.more_horiz_outlined,
                 ),
+              ),
+              PopularSongsSection(
+                popularson: PopSongModel(
+                  popDec: "popDec",
+                  popImage: "assets/images/cover1.webp",
+                  popTitel: "popTitel",
+                  icon: Icons.more_horiz_outlined,
+                ),
+              ),
+              PopularSongsSection(
+                popularson: PopSongModel(
+                  popDec: "popDec",
+                  popImage: "assets/images/cover3.webp",
+                  popTitel: "popTitel",
+                  icon: Icons.more_horiz_outlined,
+                ),
+              ),
             ],
           ),
         ),

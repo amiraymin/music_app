@@ -145,12 +145,49 @@ class ProfileScreen extends StatelessWidget {
                 songCount: '80 Songs',
               ),
 
+              const SizedBox(height: 12),
+              SizedBox(
+                width: double.infinity,
+                height: 50,
+                child: OutlinedButton.icon(
+                  onPressed: () => _confirmLogout(context),
+                  icon: const Icon(Icons.logout_rounded),
+                  label: const Text('Log out'),
+                  style: OutlinedButton.styleFrom(
+                    foregroundColor: Colors.redAccent,
+                    side: const BorderSide(color: Colors.redAccent),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                  ),
+                ),
+              ),
+
               const SizedBox(height: 20),
             ],
           ),
         ),
       ),
     );
+  }
+
+  Future<void> _confirmLogout(BuildContext context) async {
+    final logout = await showDialog<bool>(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        backgroundColor: const Color(0xff211e25),
+        title: const Text('Log out?', style: TextStyle(color: Colors.white)),
+        content: const Text('You will need to log in again to access your account.', style: TextStyle(color: Colors.white70)),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(dialogContext, false), child: const Text('Cancel')),
+          TextButton(onPressed: () => Navigator.pop(dialogContext, true), child: const Text('Log out', style: TextStyle(color: Colors.redAccent))),
+        ],
+      ),
+    );
+
+    if (logout == true && context.mounted) {
+      Navigator.of(context).pushNamedAndRemoveUntil('/', (route) => false);
+    }
   }
 
   // Stat Item Builder
