@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/widgets/common/bottom_nav_bar.dart';
 
-import '../../widgets/auth_widgets.dart';
+import '../../widgets/auth/auth_widgets.dart';
 import 'signup_screen.dart';
 
 class LoginScreen extends StatelessWidget {

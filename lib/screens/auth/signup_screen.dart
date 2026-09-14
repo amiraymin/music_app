@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../widgets/auth_widgets.dart';
+import '../../widgets/auth/auth_widgets.dart';
 import 'confirm_phone_screen.dart';
 
 class SignupScreen extends StatefulWidget {
