@@ -14,10 +14,16 @@ class BottomNavBar extends StatefulWidget {
 class _BottomNavBarState extends State<BottomNavBar> {
   int currentIndex = 0;
 
-  final List<Widget> screens = [
+  late final List<Widget> screens = [
     const HomeScreen(),
     const SearchScreen(),
-    const PlaylistsScreen(),
+    PlaylistsScreen(
+      onBackToHome: () {
+        setState(() {
+          currentIndex = 0;
+        });
+      },
+    ),
     const ProfileScreen(),
   ];
 
