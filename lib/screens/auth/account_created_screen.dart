@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/screens/home/main_home_screen.dart';
-import '../../widgets/auth_widgets.dart';
+import '../../widgets/auth/auth_widgets.dart';
 
 class AccountCreatedScreen extends StatelessWidget {
   const AccountCreatedScreen({super.key});

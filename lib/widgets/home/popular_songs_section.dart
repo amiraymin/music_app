@@ -4,8 +4,15 @@ import 'package:music_app/widgets/player/mini_player.dart';
 
 class PopularSongsSection extends StatelessWidget {
   final PopSongModel popularson;
+  final bool isSelected;
+  final VoidCallback? onIconTap;
 
-  const PopularSongsSection({super.key, required this.popularson});
+  const PopularSongsSection({
+    super.key,
+    required this.popularson,
+    this.isSelected = false,
+    this.onIconTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,10 +33,9 @@ class PopularSongsSection extends StatelessWidget {
               child: Row(
                 children: [
                   Container(
-                     
                     height: 80,
                     width: 80,
-              
+
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                       color: Color.fromARGB(255, 255, 255, 255),
@@ -61,16 +67,21 @@ class PopularSongsSection extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                             color: Color.fromARGB(255, 255, 255, 255),
                           ),
-                        overflow: TextOverflow.ellipsis,
+                          overflow: TextOverflow.ellipsis,
                           maxLines: 1,
                         ),
                       ],
                     ),
                   ),
-                  Icon(
-                    popularson.icon,
-                    color: Color.fromARGB(255, 255, 255, 255),
-                    size: 30,
+                  IconButton(
+                    onPressed: onIconTap,
+                    icon: Icon(
+                      isSelected ? Icons.check_circle_outline : popularson.icon,
+                      color: isSelected
+                          ? Colors.blue
+                          : Color.fromARGB(255, 255, 255, 255),
+                      size: 30,
+                    ),
                   ),
                 ],
               ),
@@ -93,48 +104,48 @@ List<PopSongModel> pops = [
     popDec: "sh3ban AbdelRehem",
     popImage: "assets/images/cover4.png",
     popTitel: "sha3pan ta7t el sefr",
-      icon: Icons.more_horiz_outlined,
+    icon: Icons.more_horiz_outlined,
   ),
   PopSongModel(
     popDec: "Billie Eilish",
     popImage: "assets/images/cover2.png",
     popTitel: "COPYCAT",
-     icon: Icons.more_horiz_outlined,
+    icon: Icons.more_horiz_outlined,
   ),
   PopSongModel(
     popDec: "Billie Eilish",
     popImage: "assets/images/cover1.webp",
     popTitel: "BIRDS OF A FEATHER",
-      icon: Icons.more_horiz_outlined,
+    icon: Icons.more_horiz_outlined,
   ),
   PopSongModel(
     popDec: "Billie Eilish",
     popImage: "assets/images/cover3.webp",
     popTitel: "bad guy",
-      icon: Icons.more_horiz_outlined,
+    icon: Icons.more_horiz_outlined,
   ),
-    PopSongModel(
+  PopSongModel(
     popDec: "sh3ban AbdelRehem",
     popImage: "assets/images/cover4.png",
     popTitel: "sha3pan ta7t el sefr",
-      icon: Icons.more_horiz_outlined,
+    icon: Icons.more_horiz_outlined,
   ),
   PopSongModel(
     popDec: "Billie Eilish",
     popImage: "assets/images/cover2.png",
     popTitel: "COPYCAT",
-     icon: Icons.more_horiz_outlined,
+    icon: Icons.more_horiz_outlined,
   ),
   PopSongModel(
     popDec: "Billie Eilish",
     popImage: "assets/images/cover1.webp",
     popTitel: "BIRDS OF A FEATHER",
-      icon: Icons.more_horiz_outlined,
+    icon: Icons.more_horiz_outlined,
   ),
   PopSongModel(
     popDec: "Billie Eilish",
     popImage: "assets/images/cover3.webp",
     popTitel: "bad guy",
-      icon: Icons.more_horiz_outlined,
+    icon: Icons.more_horiz_outlined,
   ),
 ];

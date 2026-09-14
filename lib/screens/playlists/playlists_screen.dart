@@ -16,9 +16,7 @@ class _PlaylistsScreenState extends State<PlaylistsScreen> {
     return Padding(
       padding: const EdgeInsets.all(15.0),
       child: Scaffold(
-        
         appBar: AppBar(
-     
           scrolledUnderElevation: 0,
           titleSpacing: 110,
           backgroundColor: Color(0xff120f16),
@@ -31,12 +29,13 @@ class _PlaylistsScreenState extends State<PlaylistsScreen> {
             ),
           ),
           leading: IconButton(
-            onPressed:()=> Navigator.pop(context),
-            icon:  Icon(
-    Icons.arrow_back_ios_outlined,
-    color: Color.fromARGB(255, 255, 255, 255),
-    size: 30,
-  ),)
+            onPressed: () => Navigator.pop(context),
+            icon: Icon(
+              Icons.arrow_back_ios_outlined,
+              color: Color.fromARGB(255, 255, 255, 255),
+              size: 30,
+            ),
+          ),
         ),
 
         floatingActionButton: FloatingActionButton(
