@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/models/favorite_artists_home.dart';
+import 'package:music_app/models/favorite_artists_seeall.dart';
+import 'package:music_app/screens/playlists/oppen_favorite_artist.dart';
 
 class FavoriteArtists extends StatelessWidget {
-  
-  final FavoriteArtModel favactor ;
+  final FavoriteArtModel favactor;
 
   const FavoriteArtists({super.key, required this.favactor});
 
@@ -17,16 +18,32 @@ class FavoriteArtists extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                height: 130,
-                width: 130,
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 255, 255, 255),
-                  image: DecorationImage(
-                    image: AssetImage(favactor.actorImage),
-                    fit: BoxFit.cover,
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => OppenFavoriteArtistScreen(
+                        favSeeAllScreen: FavoriteArtistsSeeallModell(
+                          image: favactor.actorImage,
+                          actorName: favactor.actorName,
+                          actorIcon: Icons.arrow_forward_ios_sharp,
+                        ),
+                      ),
+                    ),
+                  );
+                },
+                child: Container(
+                  height: 130,
+                  width: 130,
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 255, 255, 255),
+                    image: DecorationImage(
+                      image: AssetImage(favactor.actorImage),
+                      fit: BoxFit.cover,
+                    ),
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
-                  borderRadius: BorderRadius.circular(20.0),
                 ),
               ),
               SizedBox(height: 5),

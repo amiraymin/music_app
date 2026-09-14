@@ -1,5 +1,5 @@
 class CategoriesModel {
-  String catiName;
+ final  String catiName;
 
   CategoriesModel({
     required this.catiName

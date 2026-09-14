@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 class OrderReviewScreen extends StatelessWidget {
   const OrderReviewScreen({super.key});
 
-  // دالة إظهار نافذة نجاح الدفع مع خلفية مغيمة (Blur)
   void _showPaymentSuccessDialog(BuildContext context) {
     const primaryBlue = Color(0xFF2CA2F8);
 
@@ -14,10 +13,10 @@ class OrderReviewScreen extends StatelessWidget {
       barrierColor: Colors.black.withOpacity(0.4), // درجة تعتيم الخلفية
       builder: (BuildContext context) {
         return BackdropFilter(
-          // التأثير المغيم على الشاشة الخلفية
+          
           filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
           child: Dialog(
-            backgroundColor: const Color(0xFF1B1921), // لون الدايلوج الداكن
+            backgroundColor: const Color(0xFF1B1921), 
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(24),
             ),
@@ -29,7 +28,7 @@ class OrderReviewScreen extends StatelessWidget {
                 children: [
                   const SizedBox(height: 8),
 
-                  // أيقونة التاج مع الحلقات الدائرية المتداخلة
+        
                   Container(
                     width: 90,
                     height: 90,
@@ -57,7 +56,7 @@ class OrderReviewScreen extends StatelessWidget {
 
                   const SizedBox(height: 24),
 
-                  // Success Title
+          
                   const Text(
                     'Payment Received\nSuccessfully',
                     textAlign: TextAlign.center,
@@ -71,7 +70,7 @@ class OrderReviewScreen extends StatelessWidget {
 
                   const SizedBox(height: 12),
 
-                  // Success Subtitle
+          
                   Text(
                     'Your payment received successfully.\nListen your favourite music',
                     textAlign: TextAlign.center,
@@ -84,13 +83,13 @@ class OrderReviewScreen extends StatelessWidget {
 
                   const SizedBox(height: 28),
 
-                  // Done Button
+              
                   SizedBox(
                     width: double.infinity,
                     height: 50,
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.pop(context); // إغلاق النافذة
+                        Navigator.pop(context); 
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: primaryBlue,
@@ -158,7 +157,7 @@ class OrderReviewScreen extends StatelessWidget {
                   children: [
                     const SizedBox(height: 12),
 
-                    // Selected Premium Plan Card
+          
                     Container(
                       width: double.infinity,
                       clipBehavior: Clip.antiAlias,
@@ -251,7 +250,7 @@ class OrderReviewScreen extends StatelessWidget {
 
                     const SizedBox(height: 32),
 
-                    // Payment Method Header
+        
                     const Text(
                       'Payment Method',
                       style: TextStyle(
@@ -262,7 +261,7 @@ class OrderReviewScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
 
-                    // Payment Card Detail Tile
+        
                     Container(
                       padding: const EdgeInsets.symmetric(
                         horizontal: 16,
@@ -335,7 +334,7 @@ class OrderReviewScreen extends StatelessWidget {
               ),
             ),
 
-            // Pay Now Button
+    
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: SizedBox(
@@ -425,7 +424,6 @@ class OrderReviewScreen extends StatelessWidget {
   }
 }
 
-// رسم شعار التاج الأبيض الخاص بأيقونة النجاح
 class CrownIconPainter extends CustomPainter {
   final Color color;
 
@@ -463,7 +461,6 @@ class CrownIconPainter extends CustomPainter {
   bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
 
-// رسم التاج المفرغ للخلفية
 class CrownOutlinePainter extends CustomPainter {
   final Color color;
 

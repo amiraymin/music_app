@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/models/popular_songs.dart';
-import 'package:music_app/screens/player/minimized_player_screen.dart';
 import 'package:music_app/widgets/player/mini_player.dart';
 
 class PopularSongsSection extends StatelessWidget {

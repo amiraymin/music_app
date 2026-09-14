@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/screens/premium/premium_plans_screen.dart';
+import 'package:music_app/screens/legal/terms_screen.dart'; // مسار ملف الأحكام والشروط
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -8,6 +9,7 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     const primaryBlue = Color(0xFF2CA2F8);
     const backgroundColor = Color(0xFF120F16);
+    const accentGreen = Color(0xFF56B994);
 
     return Scaffold(
       backgroundColor: backgroundColor,
@@ -83,7 +85,7 @@ class ProfileScreen extends StatelessWidget {
 
               const SizedBox(height: 24),
 
-              // Get Premium Button (بديل Edit Profile)
+              // Get Premium Button
               SizedBox(
                 width: double.infinity,
                 height: 50,
@@ -146,6 +148,65 @@ class ProfileScreen extends StatelessWidget {
               ),
 
               const SizedBox(height: 12),
+
+              // Terms & Privacy Clause with InkWell and Arrow
+              InkWell(
+                borderRadius: BorderRadius.circular(12),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const TermsAndConditionsScreen(),
+                    ),
+                  );
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Text.rich(
+                          TextSpan(
+                            text: 'By continuing you agree to our ',
+                            style: TextStyle(
+                              color: Colors.white.withValues(alpha: 0.7),
+                              fontSize: 13,
+                            ),
+                            children: const [
+                              TextSpan(
+                                text: 'Terms of Service',
+                                style: TextStyle(
+                                  color: accentGreen,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              TextSpan(text: ' and '),
+                              TextSpan(
+                                text: 'Privacy Policy',
+                                style: TextStyle(
+                                  color: accentGreen,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              TextSpan(text: '.'),
+                            ],
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      const Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        color: Colors.white54,
+                        size: 16,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+
+              const SizedBox(height: 20),
+
+              // Logout Button
               SizedBox(
                 width: double.infinity,
                 height: 50,
@@ -206,7 +267,7 @@ class ProfileScreen extends StatelessWidget {
         Text(
           label,
           style: TextStyle(
-            color: Colors.white.withOpacity(0.6),
+            color: Colors.white.withValues(alpha: 0.6),
             fontSize: 13,
           ),
         ),
@@ -219,7 +280,7 @@ class ProfileScreen extends StatelessWidget {
     return Container(
       height: 24,
       width: 1,
-      color: Colors.white.withOpacity(0.15),
+      color: Colors.white.withValues(alpha: 0.15),
     );
   }
 
@@ -259,7 +320,7 @@ class ProfileScreen extends StatelessWidget {
                 Text(
                   songCount,
                   style: TextStyle(
-                    color: Colors.white.withOpacity(0.6),
+                    color: Colors.white.withValues(alpha: 0.6),
                     fontSize: 13,
                   ),
                 ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'payment_method_screen.dart'; // import الشاشة الجديدة
+import 'payment_method_screen.dart'; 
 
 class PremiumPlansScreen extends StatefulWidget {
   const PremiumPlansScreen({super.key});
@@ -49,7 +49,7 @@ class _PremiumPlansScreenState extends State<PremiumPlansScreen> {
                     children: [
                       const SizedBox(height: 12),
 
-                      // Header Text
+              
                       const Text(
                         'Get Premium Plans',
                         style: TextStyle(
@@ -71,7 +71,7 @@ class _PremiumPlansScreenState extends State<PremiumPlansScreen> {
 
                       const SizedBox(height: 28),
 
-                      // Elite Plan Card
+                
                       _buildPlanCard(
                         index: 0,
                         title: 'Elite Plan',
@@ -85,7 +85,7 @@ class _PremiumPlansScreenState extends State<PremiumPlansScreen> {
 
                       const SizedBox(height: 20),
 
-                      // Premium Plan Card
+            
                       _buildPlanCard(
                         index: 1,
                         title: 'Premium Plan',
@@ -103,7 +103,7 @@ class _PremiumPlansScreenState extends State<PremiumPlansScreen> {
                 ),
               ),
 
-              // Select Plan Button
+          
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
                 child: SizedBox(
@@ -186,7 +186,7 @@ class _PremiumPlansScreenState extends State<PremiumPlansScreen> {
               ),
             ),
 
-            // Card Content
+      
             Padding(
               padding: const EdgeInsets.all(22.0),
               child: Column(
@@ -264,7 +264,6 @@ class _PremiumPlansScreenState extends State<PremiumPlansScreen> {
   }
 }
 
-// رسم شعار التاج المفرغ (Crown Outline)
 class CrownOutlinePainter extends CustomPainter {
   final Color color;
 
@@ -283,7 +282,7 @@ class CrownOutlinePainter extends CustomPainter {
     final w = size.width;
     final h = size.height;
 
-    // Crown Outer Path
+    
     path.moveTo(w * 0.15, h * 0.82);
     path.lineTo(w * 0.05, h * 0.35);
     path.lineTo(w * 0.35, h * 0.52);
@@ -292,8 +291,6 @@ class CrownOutlinePainter extends CustomPainter {
     path.lineTo(w * 0.95, h * 0.35);
     path.lineTo(w * 0.85, h * 0.82);
     path.close();
-
-    // Inner Horizontal Bar
     path.moveTo(w * 0.30, h * 0.68);
     path.lineTo(w * 0.70, h * 0.68);
 

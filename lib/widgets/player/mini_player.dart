@@ -10,6 +10,8 @@ class MiniPlayer extends StatefulWidget {
 }
 
 class _MiniPlayerState extends State<MiniPlayer> {
+  bool isPlaying = false;
+  bool isFavorite = false;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -47,7 +49,6 @@ class _MiniPlayerState extends State<MiniPlayer> {
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                           fontSize: 19,
-                          
                         ),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
@@ -59,9 +60,18 @@ class _MiniPlayerState extends State<MiniPlayer> {
                     ],
                   ),
                 ),
-                  
-                Icon(Icons.favorite_border, color: Colors.white),
-                SizedBox(width: 15),
+
+                IconButton(
+                  onPressed: () {
+                    setState(() {
+                      isFavorite = !isFavorite;
+                    });
+                  },
+                  icon:Icon(isFavorite ? Icons.favorite : Icons.favorite_border ) ,
+                  color: isFavorite ? Colors.red : Colors.grey,
+                ),
+
+               
                 Padding(
                   padding: const EdgeInsets.only(right: 20),
                   child: Container(
@@ -69,13 +79,17 @@ class _MiniPlayerState extends State<MiniPlayer> {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    
+
                     child: IconButton(
                       icon: Icon(
-                        Icons.play_arrow_outlined,
+                        isPlaying ? Icons.pause : Icons.play_arrow_outlined,
                         color: Color(0xff1976d2),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          isPlaying = !isPlaying;
+                        });
+                      },
                     ),
                   ),
                 ),

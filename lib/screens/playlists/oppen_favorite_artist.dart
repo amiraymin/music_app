@@ -7,7 +7,8 @@ class OppenFavoriteArtistScreen extends StatefulWidget {
   const OppenFavoriteArtistScreen({super.key, required this.favSeeAllScreen});
 
   @override
-  State<OppenFavoriteArtistScreen> createState() => _OppenFavoriteArtistScreenState();
+  State<OppenFavoriteArtistScreen> createState() =>
+      _OppenFavoriteArtistScreenState();
 }
 
 class _OppenFavoriteArtistScreenState extends State<OppenFavoriteArtistScreen> {
@@ -15,15 +16,12 @@ class _OppenFavoriteArtistScreenState extends State<OppenFavoriteArtistScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xff120f16),
-   
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
-
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-         
               /* /////////////////////////image ////////////////////////////// */
               SizedBox(
                 height: 500,
@@ -89,27 +87,27 @@ class _OppenFavoriteArtistScreenState extends State<OppenFavoriteArtistScreen> {
                       child: SizedBox(
                         height: 70,
                         width: 70,
-                        child:  ElevatedButton(
-  onPressed: () {},
-  style: ElevatedButton.styleFrom(
-    padding: EdgeInsets.zero,
-    backgroundColor: const Color(0xff2ba2f7),
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(25),
-    ),
-  ),
-  child: const Icon(
-    Icons.play_arrow_outlined,
-    color: Colors.white,
-    size: 40,
-  ),
-),
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.zero,
+                            backgroundColor: const Color(0xff2ba2f7),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                          ),
+                          child: const Icon(
+                            Icons.play_arrow_outlined,
+                            color: Colors.white,
+                            size: 40,
+                          ),
+                        ),
                       ),
                     ),
                     Positioned(
                       height: 50,
                       width: 300,
-                       right: 100,
+                      right: 100,
                       bottom: 24,
                       child: Text(
                         widget.favSeeAllScreen.actorName,

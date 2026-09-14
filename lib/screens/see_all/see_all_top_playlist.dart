@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/models/top_playlists.dart';
-import 'package:music_app/screens/home/home_screen.dart';
+import 'package:music_app/screens/home/main_home_screen.dart';
 import 'package:music_app/widgets/home/top_playlists_section.dart';
 
 class SeeAllTopPlaylist extends StatelessWidget {

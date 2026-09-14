@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:music_app/screens/home/home_screen.dart';
+import 'package:music_app/screens/home/main_home_screen.dart';
 import 'package:music_app/widgets/home/favorite_artist_see_all.dart';
 
 class SeeAllFavoriteArtists extends StatefulWidget {
