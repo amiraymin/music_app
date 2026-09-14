@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/screens/premium/premium_plans_screen.dart';
-import 'package:music_app/screens/legal/terms_screen.dart'; // مسار ملف الأحكام والشروط
+import 'package:music_app/screens/legal/terms_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -41,10 +41,7 @@ class ProfileScreen extends StatelessWidget {
                   height: 80,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    border: Border.all(
-                      color: primaryBlue,
-                      width: 2,
-                    ),
+                    border: Border.all(color: primaryBlue, width: 2),
                     image: const DecorationImage(
                       image: NetworkImage(
                         'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=300',
@@ -132,17 +129,20 @@ class ProfileScreen extends StatelessWidget {
 
               // Playlists Items
               _buildPlaylistItem(
-                imageUrl: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=200',
+                imageUrl:
+                    'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=200',
                 title: 'Hindi Pop Hits',
                 songCount: '50 Songs',
               ),
               _buildPlaylistItem(
-                imageUrl: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=200',
+                imageUrl:
+                    'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=200',
                 title: 'Bollywood Hits',
                 songCount: '30 Songs',
               ),
               _buildPlaylistItem(
-                imageUrl: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=200',
+                imageUrl:
+                    'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=200',
                 title: 'Punjabi Hits',
                 songCount: '80 Songs',
               ),
@@ -161,7 +161,10 @@ class ProfileScreen extends StatelessWidget {
                   );
                 },
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 8.0,
+                    horizontal: 4.0,
+                  ),
                   child: Row(
                     children: [
                       Expanded(
@@ -238,10 +241,22 @@ class ProfileScreen extends StatelessWidget {
       builder: (dialogContext) => AlertDialog(
         backgroundColor: const Color(0xff211e25),
         title: const Text('Log out?', style: TextStyle(color: Colors.white)),
-        content: const Text('You will need to log in again to access your account.', style: TextStyle(color: Colors.white70)),
+        content: const Text(
+          'You will need to log in again to access your account.',
+          style: TextStyle(color: Colors.white70),
+        ),
         actions: [
-          TextButton(onPressed: () => Navigator.pop(dialogContext, false), child: const Text('Cancel')),
-          TextButton(onPressed: () => Navigator.pop(dialogContext, true), child: const Text('Log out', style: TextStyle(color: Colors.redAccent))),
+          TextButton(
+            onPressed: () => Navigator.pop(dialogContext, false),
+            child: const Text('Cancel'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(dialogContext, true),
+            child: const Text(
+              'Log out',
+              style: TextStyle(color: Colors.redAccent),
+            ),
+          ),
         ],
       ),
     );
@@ -328,10 +343,7 @@ class ProfileScreen extends StatelessWidget {
             ),
           ),
           IconButton(
-            icon: const Icon(
-              Icons.more_horiz,
-              color: Colors.white70,
-            ),
+            icon: const Icon(Icons.more_horiz, color: Colors.white70),
             onPressed: () {},
           ),
         ],
