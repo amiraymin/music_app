@@ -4,7 +4,9 @@ import 'package:music_app/widgets/playlist/add_playlist_bottom.dart';
 import 'package:music_app/widgets/playlist/playlist_card.dart';
 
 class PlaylistsScreen extends StatefulWidget {
-  const PlaylistsScreen({super.key});
+  final VoidCallback onBackToHome;
+
+  const PlaylistsScreen({super.key, required this.onBackToHome});
 
   @override
   State<PlaylistsScreen> createState() => _PlaylistsScreenState();
@@ -29,7 +31,7 @@ class _PlaylistsScreenState extends State<PlaylistsScreen> {
             ),
           ),
           leading: IconButton(
-            onPressed: () => Navigator.pop(context),
+            onPressed: widget.onBackToHome,
             icon: Icon(
               Icons.arrow_back_ios_outlined,
               color: Color.fromARGB(255, 255, 255, 255),
