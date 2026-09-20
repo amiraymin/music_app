@@ -10,13 +10,12 @@ class OrderReviewScreen extends StatelessWidget {
     showDialog(
       context: context,
       barrierDismissible: false,
-      barrierColor: Colors.black.withOpacity(0.4), // درجة تعتيم الخلفية
+      barrierColor: Colors.black.withOpacity(0.4),
       builder: (BuildContext context) {
         return BackdropFilter(
-          
           filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
           child: Dialog(
-            backgroundColor: const Color(0xFF1B1921), 
+            backgroundColor: const Color(0xFF1B1921),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(24),
             ),
@@ -25,16 +24,17 @@ class OrderReviewScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 32.0),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const SizedBox(height: 8),
 
-        
+                  // Icon Container with ripple aura
                   Container(
                     width: 90,
                     height: 90,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       shape: BoxShape.circle,
-                      color: primaryBlue.withOpacity(0.12),
+                      color: Color(0x1F2CA2F8), // ~12% opacity
                     ),
                     child: Center(
                       child: Container(
@@ -56,7 +56,6 @@ class OrderReviewScreen extends StatelessWidget {
 
                   const SizedBox(height: 24),
 
-          
                   const Text(
                     'Payment Received\nSuccessfully',
                     textAlign: TextAlign.center,
@@ -70,12 +69,11 @@ class OrderReviewScreen extends StatelessWidget {
 
                   const SizedBox(height: 12),
 
-          
-                  Text(
+                  const Text(
                     'Your payment received successfully.\nListen your favourite music',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      color: Colors.white.withOpacity(0.7),
+                      color: Color(0xB3FFFFFF), // ~70% opacity
                       fontSize: 13,
                       height: 1.4,
                     ),
@@ -83,13 +81,12 @@ class OrderReviewScreen extends StatelessWidget {
 
                   const SizedBox(height: 28),
 
-              
                   SizedBox(
                     width: double.infinity,
                     height: 50,
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.pop(context); 
+                        Navigator.pop(context);
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: primaryBlue,
@@ -157,7 +154,7 @@ class OrderReviewScreen extends StatelessWidget {
                   children: [
                     const SizedBox(height: 12),
 
-          
+                    // Plan Banner Card
                     Container(
                       width: double.infinity,
                       clipBehavior: Clip.antiAlias,
@@ -204,8 +201,8 @@ class OrderReviewScreen extends StatelessWidget {
                                 _buildFeatureItem('Add Free Music'),
                                 _buildFeatureItem('Unlimited Download'),
                                 const SizedBox(height: 10),
-                                Row(
-                                  children: const [
+                                const Row(
+                                  children: [
                                     Text(
                                       'See All',
                                       style: TextStyle(
@@ -250,7 +247,7 @@ class OrderReviewScreen extends StatelessWidget {
 
                     const SizedBox(height: 32),
 
-        
+                    // Payment Method Header
                     const Text(
                       'Payment Method',
                       style: TextStyle(
@@ -261,7 +258,7 @@ class OrderReviewScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
 
-        
+                    // Payment Method Card
                     Container(
                       padding: const EdgeInsets.symmetric(
                         horizontal: 16,
@@ -316,7 +313,9 @@ class OrderReviewScreen extends StatelessWidget {
                             ),
                           ),
                           GestureDetector(
-                            onTap: () => Navigator.pop(context),
+                            onTap: () {
+                              // TODO: Navigate to Edit Payment Method screen
+                            },
                             child: const Text(
                               'Edit',
                               style: TextStyle(
@@ -334,7 +333,7 @@ class OrderReviewScreen extends StatelessWidget {
               ),
             ),
 
-    
+            // Pay Now Button
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: SizedBox(
@@ -382,8 +381,8 @@ class OrderReviewScreen extends StatelessWidget {
           const SizedBox(width: 8),
           Text(
             feature,
-            style: TextStyle(
-              color: Colors.white.withOpacity(0.9),
+            style: const TextStyle(
+              color: Color(0xE6FFFFFF), // ~90% opacity
               fontSize: 13,
             ),
           ),

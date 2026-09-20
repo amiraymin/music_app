@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 AppBar homeheader() {
   return AppBar(
-    backgroundColor: Color(0xff120f16),
+    backgroundColor: const Color(0xff120f16),
     surfaceTintColor: Colors.transparent,
     scrolledUnderElevation: 0,
     actions: [
       IconButton(
         icon: Icon(
           Icons.notification_important_outlined,
-          color: Color(0xFFFFFFFF),
-          size: 30,
+          color: const Color(0xFFFFFFFF),
+          size: 30.r,
         ),
         onPressed: () {
           // Handle notification button press
@@ -20,8 +21,8 @@ AppBar homeheader() {
     leading: IconButton(
       icon: Icon(
         Icons.view_comfy_sharp,
-        color: Color(0xFF53abf6),
-        size: 30,
+        color: const Color(0xFF53abf6),
+        size: 30.r,
       ),
       onPressed: () {
         // Handle menu button press
@@ -41,15 +42,18 @@ class Welcome extends StatelessWidget {
         Text(
           'Hey John👋',
           style: TextStyle(
-            fontSize: 24,
+            fontSize: 24.sp,
             fontWeight: FontWeight.bold,
-            color: Color(0xffFFFFFF),
+            color: const Color(0xffFFFFFF),
           ),
         ),
-        SizedBox(height: 8),
+        SizedBox(height: 8.h),
         Text(
           'What do you want to listen to today?',
-          style: TextStyle(fontSize: 16, color: Color(0xffFFFFFF)),
+          style: TextStyle(
+            fontSize: 16.sp, 
+            color: const Color(0xffFFFFFF),
+          ),
         ),
       ],
     );
@@ -70,47 +74,48 @@ class _SearchBoxState extends State<SearchBox> {
       children: [
         Expanded(
           child: TextFormField(
-            style: const TextStyle(color: Colors.white, fontSize: 20),
+            style: TextStyle(color: Colors.white, fontSize: 18.sp),
             onTapOutside: (event) {
               FocusScope.of(context).unfocus();
             },
             decoration: InputDecoration(
               filled: true,
-              fillColor: Color(0xff19161d),
+              fillColor: const Color(0xff19161d),
               hintText: 'Search',
-              hintStyle: TextStyle(color: Color(0xffa9a4ad), fontSize: 20),
+              hintStyle: TextStyle(color: const Color(0xffa9a4ad), fontSize: 18.sp),
               prefixIcon: Icon(
                 Icons.search_rounded,
-                color: Color.fromARGB(255, 250, 250, 250),
-                size: 25,
+                color: const Color.fromARGB(255, 250, 250, 250),
+                size: 25.r,
               ),
-              prefixIconConstraints: BoxConstraints(minWidth: 70),
+              prefixIconConstraints: BoxConstraints(minWidth: 50.w),
+              contentPadding: EdgeInsets.symmetric(vertical: 14.h),
               border: OutlineInputBorder(
                 borderSide: BorderSide.none,
-                borderRadius: BorderRadius.circular(12.0),
+                borderRadius: BorderRadius.circular(12.0.r),
               ),
               enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide.none,
-                borderRadius: BorderRadius.circular(12.0),
+                borderRadius: BorderRadius.circular(12.0.r),
               ),
               focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Color(0xff2ba2f7), width: 2),
-                borderRadius: BorderRadius.circular(12.0),
+                borderSide: BorderSide(color: const Color(0xff2ba2f7), width: 2.w),
+                borderRadius: BorderRadius.circular(12.0.r),
               ),
             ),
           ),
         ),
-        SizedBox(width: 10),
+        SizedBox(width: 10.w),
         Container(
-          width: 62,
-          height: 62,
+          width: 52.w,
+          height: 52.h,
           decoration: BoxDecoration(
-            color: Color(0xff2ba2f7),
-            borderRadius: BorderRadius.circular(12.0),
+            color: const Color(0xff2ba2f7),
+            borderRadius: BorderRadius.circular(12.0.r),
           ),
           child: IconButton(
             icon: Center(
-              child: Icon(Icons.tune_rounded, color: Colors.white, size: 32),
+              child: Icon(Icons.tune_rounded, color: Colors.white, size: 28.r),
             ),
             onPressed: () {
               // Handle filter button press

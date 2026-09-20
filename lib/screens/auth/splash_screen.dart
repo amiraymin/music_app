@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../widgets/auth/auth_widgets.dart';
 import 'onboarding_screen.dart';
 
@@ -26,8 +27,8 @@ class _SplashScreenState extends State<SplashScreen> {
       backgroundColor: kBackground,
       body: Center(
         child: SizedBox(
-          width: 180,
-          height: 180,
+          width: 180.r,
+          height: 180.r,
           child: Image.asset('assets/images/music_logo.png'),
         ),
       ),
