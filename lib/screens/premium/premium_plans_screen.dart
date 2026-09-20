@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'payment_method_screen.dart'; 
+import 'package:music_app/screens/premium/payment_method_screen.dart';
 
 class PremiumPlansScreen extends StatefulWidget {
   const PremiumPlansScreen({super.key});
@@ -48,8 +48,6 @@ class _PremiumPlansScreenState extends State<PremiumPlansScreen> {
                   child: Column(
                     children: [
                       const SizedBox(height: 12),
-
-              
                       const Text(
                         'Get Premium Plans',
                         style: TextStyle(
@@ -68,10 +66,7 @@ class _PremiumPlansScreenState extends State<PremiumPlansScreen> {
                           height: 1.4,
                         ),
                       ),
-
                       const SizedBox(height: 28),
-
-                
                       _buildPlanCard(
                         index: 0,
                         title: 'Elite Plan',
@@ -82,10 +77,7 @@ class _PremiumPlansScreenState extends State<PremiumPlansScreen> {
                           'Unlimited Skips',
                         ],
                       ),
-
                       const SizedBox(height: 20),
-
-            
                       _buildPlanCard(
                         index: 1,
                         title: 'Premium Plan',
@@ -96,14 +88,11 @@ class _PremiumPlansScreenState extends State<PremiumPlansScreen> {
                           'Unlimited Download',
                         ],
                       ),
-
                       const SizedBox(height: 20),
                     ],
                   ),
                 ),
               ),
-
-          
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
                 child: SizedBox(
@@ -111,7 +100,6 @@ class _PremiumPlansScreenState extends State<PremiumPlansScreen> {
                   height: 52,
                   child: ElevatedButton(
                     onPressed: () {
-                      // الانتقال لصفحة PaymentMethodScreen
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -151,8 +139,9 @@ class _PremiumPlansScreenState extends State<PremiumPlansScreen> {
     required List<String> features,
   }) {
     final isSelected = selectedPlanIndex == index;
-    final cardColor =
-        isSelected ? const Color(0xFF2CA2F8) : const Color(0xFF1E1C24);
+    final cardColor = isSelected
+        ? const Color(0xFF2CA2F8)
+        : const Color(0xFF1E1C24);
     final crownColor = isSelected
         ? Colors.white.withOpacity(0.25)
         : Colors.white.withOpacity(0.08);
@@ -176,7 +165,6 @@ class _PremiumPlansScreenState extends State<PremiumPlansScreen> {
         ),
         child: Stack(
           children: [
-            // Crown Outline Background Icon
             Positioned(
               right: -30,
               bottom: -20,
@@ -185,8 +173,6 @@ class _PremiumPlansScreenState extends State<PremiumPlansScreen> {
                 painter: CrownOutlinePainter(color: crownColor),
               ),
             ),
-
-      
             Padding(
               padding: const EdgeInsets.all(22.0),
               child: Column(
@@ -282,7 +268,6 @@ class CrownOutlinePainter extends CustomPainter {
     final w = size.width;
     final h = size.height;
 
-    
     path.moveTo(w * 0.15, h * 0.82);
     path.lineTo(w * 0.05, h * 0.35);
     path.lineTo(w * 0.35, h * 0.52);

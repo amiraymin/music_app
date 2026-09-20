@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../widgets/auth/auth_widgets.dart';
 import 'login_screen.dart';
@@ -56,10 +57,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         return Stack(
           children: [
             Positioned(
-              top: 10,
-              right: 20,
-              bottom: 10,
-              left: 10,
+              top: 10.h,
+              right: 20.w,
+              bottom: 10.h,
+              left: 10.w,
               child: Image.asset(
                 'assets/images/onboarding_2.png',
                 fit: BoxFit.cover,
@@ -96,40 +97,44 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           itemBuilder: (context, index) {
             final page = _pages[index];
             return Padding(
-              padding: const EdgeInsets.fromLTRB(28, 12, 28, 8),
+              padding: EdgeInsets.fromLTRB(28.w, 12.h, 28.w, 8.h),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     page.$1,
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: Colors.white,
-                      fontSize: 29,
+                      fontSize: 29.sp,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10.h),
                   Text(
                     page.$2,
-                    style: const TextStyle(color: Colors.white60, height: 1.5),
+                    style: TextStyle(
+                      color: Colors.white60,
+                      fontSize: 14.sp,
+                      height: 1.5,
+                    ),
                   ),
-                  const SizedBox(height: 20),
+                  SizedBox(height: 20.h),
                   Row(
                     children: List.generate(
                       _pages.length,
                       (dotIndex) => AnimatedContainer(
                         duration: const Duration(milliseconds: 180),
-                        margin: const EdgeInsets.only(right: 6),
-                        width: dotIndex == _page ? 20 : 7,
-                        height: 7,
+                        margin: EdgeInsets.only(right: 6.w),
+                        width: dotIndex == _page ? 20.w : 7.w,
+                        height: 7.h,
                         decoration: BoxDecoration(
                           color: dotIndex == _page ? kBlue : Colors.white30,
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(10.r),
                         ),
                       ),
                     ),
                   ),
-                  const SizedBox(height: 14),
+                  SizedBox(height: 14.h),
                   FilledButton(
                     onPressed: () {
                       if (lastPage) {
@@ -144,12 +149,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     style: FilledButton.styleFrom(
                       backgroundColor: kBlue,
                       shape: const CircleBorder(),
-                      padding: const EdgeInsets.all(16),
+                      padding: EdgeInsets.all(16.r),
                     ),
-                    child: Icon(lastPage ? Icons.check : Icons.arrow_forward),
+                    child: Icon(
+                      lastPage ? Icons.check : Icons.arrow_forward,
+                      size: 24.r,
+                    ),
                   ),
                   const Spacer(),
-
                   Expanded(flex: 5, child: _buildOnboardingImage(index)),
                 ],
               ),

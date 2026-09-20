@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:music_app/widgets/common/bottom_nav_bar.dart';
 
 import '../../widgets/auth/auth_widgets.dart';

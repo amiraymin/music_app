@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'order_review_screen.dart'; // import الشاشة الجديدة
+import 'package:music_app/screens/premium/order_review_screen.dart';
 
 class PaymentMethodScreen extends StatefulWidget {
   const PaymentMethodScreen({super.key});
@@ -35,7 +35,11 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white, size: 20),
+          icon: const Icon(
+            Icons.arrow_back_ios_new,
+            color: Colors.white,
+            size: 20,
+          ),
           onPressed: () => Navigator.pop(context),
         ),
         title: const Text(
@@ -58,7 +62,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                   children: [
                     const SizedBox(height: 20),
 
-                
+                    // Credit / Debit Card Option
                     InkWell(
                       borderRadius: BorderRadius.circular(16),
                       onTap: () => setState(() => selectedMethod = 0),
@@ -80,7 +84,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                           const SizedBox(width: 14),
                           const Expanded(
                             child: Text(
-                              'Dabit/Credit Card',
+                              'Debit/Credit Card',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 15,
@@ -94,7 +98,6 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                     ),
                     const SizedBox(height: 16),
 
-            
                     if (selectedMethod == 0) ...[
                       _buildInputField(
                         controller: cardNumberController,
@@ -125,7 +128,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                       const SizedBox(height: 20),
                     ],
 
-          
+                    // Paypal Option
                     InkWell(
                       borderRadius: BorderRadius.circular(16),
                       onTap: () => setState(() => selectedMethod = 1),
@@ -170,7 +173,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                     ),
                     const SizedBox(height: 12),
 
-          
+                    // Google Pay Option
                     InkWell(
                       borderRadius: BorderRadius.circular(16),
                       onTap: () => setState(() => selectedMethod = 2),
@@ -213,7 +216,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
               ),
             ),
 
-          
+            // Pay Now Button
             Padding(
               padding: const EdgeInsets.all(20),
               child: SizedBox(
@@ -278,7 +281,6 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
     );
   }
 
-
   Widget _buildInputField({
     required TextEditingController controller,
     required String hintText,
@@ -297,10 +299,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
         style: const TextStyle(color: Colors.white, fontSize: 14),
         decoration: InputDecoration(
           hintText: hintText,
-          hintStyle: const TextStyle(
-            color: Colors.white38,
-            fontSize: 14,
-          ),
+          hintStyle: const TextStyle(color: Colors.white38, fontSize: 14),
           border: InputBorder.none,
           contentPadding: const EdgeInsets.symmetric(
             horizontal: 16,
