@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:music_app/models/favorite_artists_seeall.dart';
 import 'package:music_app/widgets/home/popular_songs_section.dart';
 
@@ -66,12 +67,12 @@ class _OppenFavoriteArtistScreenState extends State<OppenFavoriteArtistScreen> {
                               ),
                             ),
                             Row(
-                              children: const [
+                              children: [
                                 Icon(
                                   Icons.favorite_border,
                                   color: Colors.white,
                                 ),
-                                SizedBox(width: 12),
+                                SizedBox(width: 12.w),
                                 Icon(Icons.more_vert, color: Colors.white),
                               ],
                             ),
@@ -111,9 +112,9 @@ class _OppenFavoriteArtistScreenState extends State<OppenFavoriteArtistScreen> {
                       bottom: 24,
                       child: Text(
                         widget.favSeeAllScreen.actorName,
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: Colors.white70,
-                          fontSize: 30,
+                          fontSize: 30.sp,
                           decoration: TextDecoration.none,
                         ),
                       ),

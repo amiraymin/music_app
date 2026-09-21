@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:music_app/models/popular_songs.dart';
 
 class MiniPlayer extends StatefulWidget {
@@ -28,7 +29,7 @@ class _MiniPlayerState extends State<MiniPlayer> {
           children: [
             Row(
               children: [
-                SizedBox(width: 8),
+                SizedBox(width: 8.w),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Image.asset(
@@ -38,7 +39,7 @@ class _MiniPlayerState extends State<MiniPlayer> {
                     fit: BoxFit.cover,
                   ),
                 ),
-                SizedBox(width: 13),
+                SizedBox(width: 13.w),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,14 +49,14 @@ class _MiniPlayerState extends State<MiniPlayer> {
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 19,
+                          fontSize: 19.sp,
                         ),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
                       Text(
                         widget.popminy.popDec,
-                        style: TextStyle(color: Colors.white70, fontSize: 15),
+                        style: TextStyle(color: Colors.white70, fontSize: 15.sp),
                       ),
                     ],
                   ),
@@ -95,7 +96,7 @@ class _MiniPlayerState extends State<MiniPlayer> {
                 ),
               ],
             ),
-            SizedBox(height: 15),
+            SizedBox(height: 15.h),
 
             // simple progress line
           ],

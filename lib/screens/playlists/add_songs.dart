@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:music_app/models/popular_songs.dart';
 import 'package:music_app/widgets/home/popular_songs_section.dart';
 
@@ -23,7 +24,7 @@ class _AddSongsScreenState extends State<AddSongsScreen> {
           "Add songs",
           style: TextStyle(
             color: Color.fromARGB(255, 255, 255, 255),
-            fontSize: 20,
+            fontSize: 20.sp,
             fontWeight: FontWeight.bold,
           ),
         ),

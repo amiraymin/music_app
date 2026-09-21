@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'payment_method_screen.dart'; 
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'payment_method_screen.dart';
 
 class PremiumPlansScreen extends StatefulWidget {
   const PremiumPlansScreen({super.key});
@@ -28,11 +29,11 @@ class _PremiumPlansScreenState extends State<PremiumPlansScreen> {
           ),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Text(
+        title: Text(
           'Premium Plans',
           style: TextStyle(
             color: Colors.white,
-            fontSize: 18,
+            fontSize: 18.sp,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -47,31 +48,29 @@ class _PremiumPlansScreenState extends State<PremiumPlansScreen> {
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
-                      const SizedBox(height: 12),
+                      SizedBox(height: 12.h),
 
-              
-                      const Text(
-                        'Get Premium Plans',
-                        style: TextStyle(
-                          color: primaryBlue,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
+                        Text(
+                          'Get Premium Plans',
+                          style: TextStyle(
+                            color: primaryBlue,
+                            fontSize: 20.sp,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
-                      const SizedBox(height: 8),
+                      SizedBox(height: 8.h),
                       Text(
                         'Enjoy listing songs with better audio\nquality and without ads',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.white.withOpacity(0.7),
-                          fontSize: 13,
+                          fontSize: 13.sp,
                           height: 1.4,
                         ),
                       ),
 
-                      const SizedBox(height: 28),
+                      SizedBox(height: 28.h),
 
-                
                       _buildPlanCard(
                         index: 0,
                         title: 'Elite Plan',
@@ -83,9 +82,8 @@ class _PremiumPlansScreenState extends State<PremiumPlansScreen> {
                         ],
                       ),
 
-                      const SizedBox(height: 20),
+                      SizedBox(height: 20.h),
 
-            
                       _buildPlanCard(
                         index: 1,
                         title: 'Premium Plan',
@@ -97,13 +95,12 @@ class _PremiumPlansScreenState extends State<PremiumPlansScreen> {
                         ],
                       ),
 
-                      const SizedBox(height: 20),
+                      SizedBox(height: 20.h),
                     ],
                   ),
                 ),
               ),
 
-          
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
                 child: SizedBox(
@@ -126,11 +123,11 @@ class _PremiumPlansScreenState extends State<PremiumPlansScreen> {
                       ),
                       elevation: 0,
                     ),
-                    child: const Text(
+                    child:  Text(
                       'Select Plan',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 16,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -151,8 +148,9 @@ class _PremiumPlansScreenState extends State<PremiumPlansScreen> {
     required List<String> features,
   }) {
     final isSelected = selectedPlanIndex == index;
-    final cardColor =
-        isSelected ? const Color(0xFF2CA2F8) : const Color(0xFF1E1C24);
+    final cardColor = isSelected
+        ? const Color(0xFF2CA2F8)
+        : const Color(0xFF1E1C24);
     final crownColor = isSelected
         ? Colors.white.withOpacity(0.25)
         : Colors.white.withOpacity(0.08);
@@ -186,7 +184,6 @@ class _PremiumPlansScreenState extends State<PremiumPlansScreen> {
               ),
             ),
 
-      
             Padding(
               padding: const EdgeInsets.all(22.0),
               child: Column(
@@ -194,22 +191,22 @@ class _PremiumPlansScreenState extends State<PremiumPlansScreen> {
                 children: [
                   Text(
                     title,
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: Colors.white,
-                      fontSize: 18,
+                      fontSize: 18.sp,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 8),
+                  SizedBox(height: 8.h),
                   Text(
                     price,
-                    style: const TextStyle(
+                    style:  TextStyle(
                       color: Colors.white,
-                      fontSize: 28,
+                      fontSize: 28.sp,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 16),
+                  SizedBox(height: 16.h),
                   ...features.map(
                     (feature) => Padding(
                       padding: const EdgeInsets.only(bottom: 8.0),
@@ -223,30 +220,30 @@ class _PremiumPlansScreenState extends State<PremiumPlansScreen> {
                               shape: BoxShape.circle,
                             ),
                           ),
-                          const SizedBox(width: 8),
+                          SizedBox(width: 8.w),
                           Text(
                             feature,
                             style: TextStyle(
                               color: Colors.white.withOpacity(0.9),
-                              fontSize: 13,
+                              fontSize: 13.sp,
                             ),
                           ),
                         ],
                       ),
                     ),
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10.h),
                   Row(
                     children: [
                       Text(
                         'See All',
                         style: TextStyle(
                           color: Colors.white.withOpacity(0.9),
-                          fontSize: 12,
+                          fontSize: 12.sp,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      const SizedBox(width: 4),
+                      SizedBox(width: 4.w),
                       Icon(
                         Icons.keyboard_arrow_down,
                         color: Colors.white.withOpacity(0.9),
@@ -282,7 +279,6 @@ class CrownOutlinePainter extends CustomPainter {
     final w = size.width;
     final h = size.height;
 
-    
     path.moveTo(w * 0.15, h * 0.82);
     path.lineTo(w * 0.05, h * 0.35);
     path.lineTo(w * 0.35, h * 0.52);

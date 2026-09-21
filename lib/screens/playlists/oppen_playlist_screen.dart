@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:music_app/models/top_playlists.dart';
 import 'package:music_app/screens/playlists/add_songs.dart';
 import 'package:music_app/widgets/home/popular_songs_section.dart';
@@ -67,15 +68,20 @@ class _OppenPlaylistScreenState extends State<OppenPlaylistScreen> {
                               children: [
                                 IconButton(
                                   onPressed: () {
-                                    Navigator.push(context,
-                                     MaterialPageRoute(builder: ((context) =>AddSongsScreen() )));
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: ((context) =>
+                                            AddSongsScreen()),
+                                      ),
+                                    );
                                   },
                                   icon: const Icon(
                                     Icons.add_circle_outline,
                                     color: Colors.white,
                                   ),
                                 ),
-                                const SizedBox(width: 12),
+                                SizedBox(width: 12.w),
                                 const Icon(
                                   Icons.more_vert,
                                   color: Colors.white,
@@ -97,18 +103,18 @@ class _OppenPlaylistScreenState extends State<OppenPlaylistScreen> {
                         children: [
                           Text(
                             widget.top.topName,
-                            style: const TextStyle(
+                            style: TextStyle(
                               color: Colors.white,
-                              fontSize: 22,
+                              fontSize: 22.sp,
                               fontWeight: FontWeight.bold,
                               decoration: TextDecoration.none,
                             ),
                           ),
                           Text(
                             widget.top.topTitle,
-                            style: const TextStyle(
+                            style: TextStyle(
                               color: Colors.white70,
-                              fontSize: 14,
+                              fontSize: 14.sp,
                               decoration: TextDecoration.none,
                             ),
                           ),
@@ -126,8 +132,8 @@ class _OppenPlaylistScreenState extends State<OppenPlaylistScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           SizedBox(
-                            height: 60,
-                            width: 155,
+                              height: 60.h,
+                              width: 155.w,
                             child: ElevatedButton.icon(
                               onPressed: () {},
                               icon: const Icon(
@@ -135,11 +141,11 @@ class _OppenPlaylistScreenState extends State<OppenPlaylistScreen> {
                                 color: Colors.white,
                                 size: 35,
                               ),
-                              label: const Text(
+                              label: Text(
                                 "Play",
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 15,
+                                  fontSize: 15.sp,
                                 ),
                               ),
                               style: ElevatedButton.styleFrom(
@@ -154,8 +160,8 @@ class _OppenPlaylistScreenState extends State<OppenPlaylistScreen> {
                             Shuffle bottom
                           */
                           SizedBox(
-                            height: 60,
-                            width: 155,
+                            height: 60.h,
+                            width: 155.w,
                             child: OutlinedButton.icon(
                               onPressed: () {},
                               icon: const Icon(
@@ -163,11 +169,11 @@ class _OppenPlaylistScreenState extends State<OppenPlaylistScreen> {
                                 color: Colors.black,
                                 size: 35,
                               ),
-                              label: const Text(
+                              label: Text(
                                 "Shuffle",
                                 style: TextStyle(
                                   color: Colors.black,
-                                  fontSize: 15,
+                                  fontSize: 15.sp,
                                 ),
                               ),
                               style: OutlinedButton.styleFrom(

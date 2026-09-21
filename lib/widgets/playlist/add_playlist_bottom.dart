@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AddPlaylistBottom extends StatelessWidget {
   const AddPlaylistBottom({super.key});
@@ -21,12 +22,12 @@ class AddPlaylistBottom extends StatelessWidget {
             Text(
               "Create New Playlist",
               style: TextStyle(
-                fontSize: 30,
+                fontSize: 30.sp,
                 fontWeight: FontWeight.bold,
                 color: Color.fromARGB(255, 255, 255, 255),
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 20.h),
             TextFormField(
               onTapOutside: (event) {
                 FocusScope.of(context).unfocus();
@@ -37,7 +38,7 @@ class AddPlaylistBottom extends StatelessWidget {
                 hintText: 'Song Name',
                 hintStyle: TextStyle(
                   color: Color.fromARGB(255, 255, 255, 255),
-                  fontSize: 20,
+                  fontSize: 20.sp,
                 ),
 
                 prefixIconConstraints: BoxConstraints(minWidth: 70),
@@ -55,11 +56,11 @@ class AddPlaylistBottom extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 35),
+            SizedBox(height: 35.h),
 
             Row(
               children: [
-                SizedBox(width: 5),
+                SizedBox(width: 5.w),
                 SizedBox(
                   height: 70,
                   width: 180,
@@ -77,17 +78,17 @@ class AddPlaylistBottom extends StatelessWidget {
                     onPressed: () {
                       Navigator.pop(context);
                     },
-                    child: const Text(
+                    child: Text(
                       "Cancel",
                       style: TextStyle(
                         color: Color.fromARGB(255, 255, 255, 255),
-                        fontSize: 25,
+                        fontSize: 25.sp,
                       ),
                     ),
                   ),
                 ),
 
-                SizedBox(width: 15),
+                SizedBox(width: 15.w),
 
                 SizedBox(
                   height: 70,
@@ -106,11 +107,11 @@ class AddPlaylistBottom extends StatelessWidget {
                     onPressed: () {
                       Navigator.pop(context);
                     },
-                    child: const Text(
+                    child: Text(
                       "Create",
                       style: TextStyle(
                         color: Color.fromARGB(255, 255, 255, 255),
-                        fontSize: 25,
+                        fontSize: 25.sp,
                       ),
                     ),
                   ),

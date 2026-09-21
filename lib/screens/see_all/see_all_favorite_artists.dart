@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:music_app/screens/home/main_home_screen.dart';
 import 'package:music_app/widgets/home/favorite_artist_see_all.dart';
 
@@ -23,7 +24,7 @@ class _SeeAllFavoriteArtistsState extends State<SeeAllFavoriteArtists> {
           "Favorite Artists",
           style: TextStyle(
             color: Color.fromARGB(255, 255, 255, 255),
-            fontSize: 20,
+            fontSize: 20.sp,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -46,7 +47,7 @@ class _SeeAllFavoriteArtistsState extends State<SeeAllFavoriteArtists> {
         padding: const EdgeInsets.all(15.0),
         itemBuilder: (context, i) =>
             FavoriteArtistSeeAll(favSeeAll: favoArtSeeAll[i]),
-        separatorBuilder: (context, i) => const SizedBox(height: 10),
+        separatorBuilder: (context, i) => SizedBox(height: 10.h),
         itemCount: favoArtSeeAll.length,
       ),
     );

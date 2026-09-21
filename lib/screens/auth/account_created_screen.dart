@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:music_app/screens/home/main_home_screen.dart';
 import '../../widgets/auth/auth_widgets.dart';
 
@@ -24,23 +25,23 @@ class AccountCreatedScreen extends StatelessWidget {
               ),
               child: const Icon(Icons.check, color: Colors.white, size: 32),
             ),
-            const SizedBox(height: 24),
-            const Text(
+            SizedBox(height: 24.h),
+            Text(
               'Account Created\nSuccessfully',
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 22,
+                fontSize: 22.sp,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 12),
+            SizedBox(height: 12.h),
             const Text(
               'Your account created successfully.\nListen your favourite music',
               textAlign: TextAlign.center,
               style: TextStyle(color: Colors.white60),
             ),
-            const SizedBox(height: 24),
+            SizedBox(height: 24.h),
             FilledButton(
               onPressed: () => replaceScreen(context, const HomeScreen()),
               style: FilledButton.styleFrom(

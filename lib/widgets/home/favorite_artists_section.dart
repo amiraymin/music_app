@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:music_app/models/favorite_artists_home.dart';
 import 'package:music_app/models/favorite_artists_seeall.dart';
 import 'package:music_app/screens/playlists/oppen_favorite_artist.dart';
@@ -14,7 +15,7 @@ class FavoriteArtists extends StatelessWidget {
       children: [
      
         SizedBox(
-          width: 130,
+          width: 130.w,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -34,19 +35,19 @@ class FavoriteArtists extends StatelessWidget {
                   );
                 },
                 child: Container(
-                  height: 130,
-                  width: 130,
+                  height: 130.h,
+                  width: 130.w,
                   decoration: BoxDecoration(
                     color: Color.fromARGB(255, 255, 255, 255),
                     image: DecorationImage(
                       image: AssetImage(favactor.actorImage),
                       fit: BoxFit.cover,
                     ),
-                    borderRadius: BorderRadius.circular(20.0),
+                    borderRadius: BorderRadius.circular(20.r),
                   ),
                 ),
               ),
-              SizedBox(height: 5),
+              SizedBox(height: 5.h),
           
               Text(
                 favactor.actorName,

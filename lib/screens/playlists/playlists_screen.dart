@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:music_app/models/play_list_card.dart';
 import 'package:music_app/widgets/playlist/add_playlist_bottom.dart';
 import 'package:music_app/widgets/playlist/playlist_card.dart';
@@ -26,7 +27,7 @@ class _PlaylistsScreenState extends State<PlaylistsScreen> {
             "Playlists",
             style: TextStyle(
               color: Color.fromARGB(255, 255, 255, 255),
-              fontSize: 20,
+              fontSize: 20.sp,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -68,7 +69,7 @@ class _PlaylistsScreenState extends State<PlaylistsScreen> {
                   itemCount: cardlist.length,
                   itemBuilder: (context, index) =>
                       PlaylistCard(playCard: cardlist[index]),
-                  separatorBuilder: (context, index) => SizedBox(width: 10),
+                  separatorBuilder: (context, index) => SizedBox(width: 10.w),
                 ),
               ),
             ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../widgets/auth/auth_widgets.dart';
 import 'account_created_screen.dart';
 
@@ -39,29 +40,29 @@ class _OtpScreenState extends State<OtpScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             const Icon(Icons.lock_person_outlined, color: kBlue, size: 48),
-            const SizedBox(height: 16),
-            const Text(
+            SizedBox(height: 16.h),
+            Text(
               'Enter OTP',
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 22,
+                fontSize: 22.sp,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 8),
+            SizedBox(height: 8.h),
             const Text(
               'A verification code was sent to your email.',
               textAlign: TextAlign.center,
               style: TextStyle(color: Colors.white60),
             ),
-            const SizedBox(height: 24),
+            SizedBox(height: 24.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: List.generate(
                 4,
                 (index) => SizedBox(
-                  width: 48,
+                  width: 48.w,
                   child: TextField(
                     controller: _controllers[index],
                     textAlign: TextAlign.center,
@@ -71,9 +72,9 @@ class _OtpScreenState extends State<OtpScreen> {
                     onChanged: (_) {
                       if (_showOtpError) setState(() => _showOtpError = false);
                     },
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: Colors.white,
-                      fontSize: 22,
+                      fontSize: 22.sp,
                       fontWeight: FontWeight.w600,
                     ),
                     decoration: InputDecoration(
@@ -93,7 +94,7 @@ class _OtpScreenState extends State<OtpScreen> {
                 ),
               ),
             ),
-            const SizedBox(height: 24),
+            SizedBox(height: 24.h),
             FilledButton(
               onPressed: () {
                 if (!_hasFourDigits) {
@@ -114,14 +115,14 @@ class _OtpScreenState extends State<OtpScreen> {
               child: const Text('Verify'),
             ),
             if (_showOtpError) ...[
-              const SizedBox(height: 8),
-              const Text(
+              SizedBox(height: 8.h),
+              Text(
                 'Please enter the 4-digit verification code.',
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.redAccent, fontSize: 12),
+                style: TextStyle(color: Colors.redAccent, fontSize: 12.sp),
               ),
             ],
-            const SizedBox(height: 12),
+            SizedBox(height: 12.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
