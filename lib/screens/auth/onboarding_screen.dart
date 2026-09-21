@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../widgets/auth/auth_widgets.dart';
 import 'login_screen.dart';
@@ -102,18 +103,18 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 children: [
                   Text(
                     page.$1,
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: Colors.white,
-                      fontSize: 29,
+                      fontSize: 29.sp,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10.h),
                   Text(
                     page.$2,
                     style: const TextStyle(color: Colors.white60, height: 1.5),
                   ),
-                  const SizedBox(height: 20),
+                  SizedBox(height: 20.h),
                   Row(
                     children: List.generate(
                       _pages.length,
@@ -129,7 +130,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 14),
+                  SizedBox(height: 14.h),
                   FilledButton(
                     onPressed: () {
                       if (lastPage) {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:music_app/models/top_playlists.dart';
 import 'package:music_app/screens/playlists/oppen_playlist_screen.dart';
 
@@ -27,19 +28,19 @@ class TopPlaylistsSection extends StatelessWidget {
                 );
               },
               child: Container(
-                height: 160,
-                width: 160,
+                height: 160.h,
+                width: 160.w,
                 decoration: BoxDecoration(
                   color: Color.fromARGB(255, 255, 255, 255),
                   image: DecorationImage(
                     image: AssetImage(topPlay.topImage),
                     fit: BoxFit.cover,
                   ),
-                  borderRadius: BorderRadius.circular(20.0),
+                  borderRadius: BorderRadius.circular(20.r),
                 ),
               ),
             ),
-            SizedBox(height: 5,),
+            SizedBox(height: 5.h),
                         
 
             Text(

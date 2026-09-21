@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:music_app/models/category.dart';
 
 class Caragories extends StatefulWidget {
@@ -28,7 +29,7 @@ class _CaragoriesState extends State<Caragories> {
           child: Text(
             widget.categoris.catiName,
             style: TextStyle(
-              fontSize: 15,
+              fontSize: 15.sp,
               color: Color.fromARGB(255, 255, 255, 255),
               fontWeight: FontWeight.w400,
             ),

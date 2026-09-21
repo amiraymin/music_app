@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:music_app/models/trending_song.dart';
 
 class PlaySongScreen extends StatefulWidget {
@@ -42,7 +43,7 @@ class _PlaySongScreenState extends State<PlaySongScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 20.h),
               ClipRRect(
                 borderRadius: BorderRadiusGeometry.circular(20),
                 child: Image.asset(
@@ -52,19 +53,19 @@ class _PlaySongScreenState extends State<PlaySongScreen> {
                   width: double.infinity,
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 20.h),
               Text(
                 widget.trendingplayer.artistName,
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 22,
+                  fontSize: 22.sp,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 50),
+              SizedBox(height: 50.h),
               Text(
                 widget.trendingplayer.songTitle,
-                style: TextStyle(color: Colors.grey, fontSize: 14),
+                style: TextStyle(color: Colors.grey, fontSize: 14.sp),
               ),
               Slider(
                 value: 0.4,
@@ -78,15 +79,15 @@ class _PlaySongScreenState extends State<PlaySongScreen> {
                 children: [
                   Text(
                     "2:04",
-                    style: TextStyle(color: Colors.grey, fontSize: 12),
+                    style: TextStyle(color: Colors.grey, fontSize: 12.sp),
                   ),
                   Text(
                     "3:10",
-                    style: TextStyle(color: Colors.grey, fontSize: 12),
+                    style: TextStyle(color: Colors.grey, fontSize: 12.sp),
                   ),
                 ],
               ),
-              SizedBox(height: 50),
+              SizedBox(height: 50.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -110,12 +111,14 @@ class _PlaySongScreenState extends State<PlaySongScreen> {
                     child: IconButton(
                       onPressed: () {
                         setState(() {
-                          isPlaying = !isPlaying;                          
+                          isPlaying = !isPlaying;
                         });
                       },
 
                       icon: Icon(
-                       isPlaying ? Icons.pause_sharp : Icons.play_arrow_outlined,
+                        isPlaying
+                            ? Icons.pause_sharp
+                            : Icons.play_arrow_outlined,
                         color: Colors.white,
                         size: 50,
                       ),

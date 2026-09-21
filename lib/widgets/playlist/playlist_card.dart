@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:music_app/models/play_list_card.dart';
 
 class PlaylistCard extends StatelessWidget {
@@ -12,7 +13,7 @@ class PlaylistCard extends StatelessWidget {
     return Column(
       
       children: [
-        SizedBox(height: 10),
+        SizedBox(height: 10.h),
         Row(
           children: [
             Container(
@@ -28,7 +29,7 @@ class PlaylistCard extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(width: 10),
+            SizedBox(width: 10.w),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,7 +37,7 @@ class PlaylistCard extends StatelessWidget {
                   Text(
                     playCard.playCardName,
                     style: TextStyle(
-                      fontSize: 17,
+                      fontSize: 17.sp,
                       fontWeight: FontWeight.bold,
                       color: Color.fromARGB(255, 255, 255, 255),
                     ),
@@ -44,7 +45,7 @@ class PlaylistCard extends StatelessWidget {
                   Text(
                     playCard.playCardDec,
                     style: TextStyle(
-                      fontSize: 17,
+                      fontSize: 17.sp,
                       fontWeight: FontWeight(320),
                       color: Color.fromARGB(255, 255, 255, 255),
                     ),
@@ -60,7 +61,7 @@ class PlaylistCard extends StatelessWidget {
           ],
         ),
     
-        SizedBox(height: 10),
+        SizedBox(height: 10.h),
         Container(
           height: 1,
           decoration: BoxDecoration(color: Color(0xff211e25)),

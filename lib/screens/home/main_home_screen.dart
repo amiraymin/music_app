@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:music_app/screens/home/favorite_artists.dart';
 import 'package:music_app/screens/home/popular_songs.dart';
 import 'package:music_app/screens/home/top_playlists.dart';
@@ -18,18 +19,18 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: homeheader(),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(20.r),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Welcome(),
-              SizedBox(height: 16),
+              SizedBox(height: 16.h),
               SearchBox(),
-              SizedBox(height: 16),
+              SizedBox(height: 16.h),
               trendingSongText(),
-              SizedBox(height: 16),
+              SizedBox(height: 16.h),
               // Trending songs
               trendingSongsRow(),
               // Top Playlists

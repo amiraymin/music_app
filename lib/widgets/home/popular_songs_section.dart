@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:music_app/models/popular_songs.dart';
 import 'package:music_app/widgets/player/mini_player.dart';
 
@@ -20,7 +21,7 @@ class PopularSongsSection extends StatelessWidget {
       children: [
         Column(
           children: [
-            SizedBox(height: 10),
+            SizedBox(height: 10.h),
             GestureDetector(
               onTap: () {
                 showModalBottomSheet(
@@ -33,11 +34,11 @@ class PopularSongsSection extends StatelessWidget {
               child: Row(
                 children: [
                   Container(
-                    height: 80,
-                    width: 80,
+                    height: 80.h,
+                    width: 80.w,
 
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(15.r),
                       color: Color.fromARGB(255, 255, 255, 255),
                       image: DecorationImage(
                         image: AssetImage(popularson.popImage),
@@ -45,7 +46,7 @@ class PopularSongsSection extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(width: 10),
+                  SizedBox(width: 10.w),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,7 +54,7 @@ class PopularSongsSection extends StatelessWidget {
                         Text(
                           popularson.popTitel,
                           style: TextStyle(
-                            fontSize: 17,
+                            fontSize: 17.sp,
                             fontWeight: FontWeight.w400,
                             color: Color.fromARGB(255, 255, 255, 255),
                           ),
@@ -63,7 +64,7 @@ class PopularSongsSection extends StatelessWidget {
                         Text(
                           popularson.popDec,
                           style: TextStyle(
-                            fontSize: 17,
+                            fontSize: 17.sp,
                             fontWeight: FontWeight.w400,
                             color: Color.fromARGB(255, 255, 255, 255),
                           ),
@@ -80,16 +81,16 @@ class PopularSongsSection extends StatelessWidget {
                       color: isSelected
                           ? Colors.blue
                           : Color.fromARGB(255, 255, 255, 255),
-                      size: 30,
+                      size: 30.r,
                     ),
                   ),
                 ],
               ),
             ),
 
-            SizedBox(height: 10),
+            SizedBox(height: 10.h),
             Container(
-              height: 1,
+              height: 1.h,
               decoration: BoxDecoration(color: Color(0xff211e25)),
             ),
           ],

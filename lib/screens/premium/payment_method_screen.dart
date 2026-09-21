@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'order_review_screen.dart'; // import الشاشة الجديدة
 
 class PaymentMethodScreen extends StatefulWidget {
@@ -35,15 +36,19 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white, size: 20),
+          icon: const Icon(
+            Icons.arrow_back_ios_new,
+            color: Colors.white,
+            size: 20,
+          ),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Text(
+        title: Text(
           'Payment Method',
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
-            fontSize: 18,
+            fontSize: 18.sp,
           ),
         ),
         centerTitle: true,
@@ -56,9 +61,8 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
                   children: [
-                    const SizedBox(height: 20),
+                    SizedBox(height: 20.h),
 
-                
                     InkWell(
                       borderRadius: BorderRadius.circular(16),
                       onTap: () => setState(() => selectedMethod = 0),
@@ -77,13 +81,13 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                               size: 22,
                             ),
                           ),
-                          const SizedBox(width: 14),
-                          const Expanded(
+                          SizedBox(width: 14.w),
+                          Expanded(
                             child: Text(
                               'Dabit/Credit Card',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 15,
+                                fontSize: 15.sp,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
@@ -92,16 +96,15 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                         ],
                       ),
                     ),
-                    const SizedBox(height: 16),
+                    SizedBox(height: 16.h),
 
-            
                     if (selectedMethod == 0) ...[
                       _buildInputField(
                         controller: cardNumberController,
                         hintText: 'Card Number',
                         keyboardType: TextInputType.number,
                       ),
-                      const SizedBox(height: 12),
+                      SizedBox(height: 12.h),
                       Row(
                         children: [
                           Expanded(
@@ -111,7 +114,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                               keyboardType: TextInputType.datetime,
                             ),
                           ),
-                          const SizedBox(width: 12),
+                          SizedBox(width: 12.w),
                           Expanded(
                             child: _buildInputField(
                               controller: cvvController,
@@ -122,10 +125,9 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 20),
+                      SizedBox(height: 20.h),
                     ],
 
-          
                     InkWell(
                       borderRadius: BorderRadius.circular(16),
                       onTap: () => setState(() => selectedMethod = 1),
@@ -140,25 +142,25 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                                 color: cardBackgroundColor,
                                 borderRadius: BorderRadius.circular(12),
                               ),
-                              child: const Center(
+                              child:  Center(
                                 child: Text(
                                   'P',
                                   style: TextStyle(
                                     color: Color(0xFF0079C1),
-                                    fontSize: 22,
+                                    fontSize: 22.sp,
                                     fontWeight: FontWeight.w900,
                                     fontStyle: FontStyle.italic,
                                   ),
                                 ),
                               ),
                             ),
-                            const SizedBox(width: 14),
-                            const Expanded(
+                            SizedBox(width: 14.w),
+                             Expanded(
                               child: Text(
                                 'Paypal',
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 15,
+                                  fontSize: 15.sp,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
@@ -168,9 +170,8 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 12),
+                    SizedBox(height: 12.h),
 
-          
                     InkWell(
                       borderRadius: BorderRadius.circular(16),
                       onTap: () => setState(() => selectedMethod = 2),
@@ -192,13 +193,13 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                                 ),
                               ),
                             ),
-                            const SizedBox(width: 14),
-                            const Expanded(
+                            SizedBox(width: 14.w),
+                             Expanded(
                               child: Text(
                                 'Google Pay',
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 15,
+                                  fontSize: 15.sp,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
@@ -213,7 +214,6 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
               ),
             ),
 
-          
             Padding(
               padding: const EdgeInsets.all(20),
               child: SizedBox(
@@ -235,11 +235,11 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                     ),
                     elevation: 0,
                   ),
-                  child: const Text(
+                  child:  Text(
                     'Pay Now',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -278,7 +278,6 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
     );
   }
 
-
   Widget _buildInputField({
     required TextEditingController controller,
     required String hintText,
@@ -294,13 +293,10 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
         controller: controller,
         keyboardType: keyboardType,
         obscureText: obscureText,
-        style: const TextStyle(color: Colors.white, fontSize: 14),
+        style: TextStyle(color: Colors.white, fontSize: 14.sp),
         decoration: InputDecoration(
           hintText: hintText,
-          hintStyle: const TextStyle(
-            color: Colors.white38,
-            fontSize: 14,
-          ),
+          hintStyle: TextStyle(color: Colors.white38, fontSize: 14.sp),
           border: InputBorder.none,
           contentPadding: const EdgeInsets.symmetric(
             horizontal: 16,

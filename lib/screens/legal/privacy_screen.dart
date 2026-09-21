@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PrivacyScreen extends StatelessWidget {
   const PrivacyScreen({super.key});
@@ -18,11 +19,11 @@ class PrivacyScreen extends StatelessWidget {
           ),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Text(
+        title: Text(
           'Privacy Policy',
           style: TextStyle(
             color: Colors.white,
-            fontSize: 18,
+            fontSize: 18.sp,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -39,38 +40,38 @@ class PrivacyScreen extends StatelessWidget {
                 'Please read these privacy policy, carefully before using our app operated by us.',
                 style: TextStyle(
                   color: Colors.white.withValues(alpha: 0.9),
-                  fontSize: 15,
+                  fontSize: 15.sp,
                   height: 1.4,
                   fontWeight: FontWeight.w400,
                 ),
               ),
 
-              const SizedBox(height: 28),
+              SizedBox(height: 28.h),
 
               // Section Title (Privacy Policy)
-              const Text(
+              Text(
                 'Privacy Policy',
                 style: TextStyle(
                   color: Color(0xFF2CA2F8),
-                  fontSize: 16,
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.bold,
                 ),
               ),
 
-              const SizedBox(height: 14),
+              SizedBox(height: 14.h),
 
               // Body Description Text
               Text(
                 "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.\nAll the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.\nThe generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
                 style: TextStyle(
                   color: Colors.white.withValues(alpha: 0.7),
-                  fontSize: 14,
+                  fontSize: 14.sp,
                   height: 1.5,
                   fontWeight: FontWeight.w400,
                 ),
               ),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
             ],
           ),
         ),

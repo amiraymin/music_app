@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 const kBackground = Color(0xff120f16);
 const kBlue = Color(0xff2ba2f7);
@@ -66,23 +67,23 @@ class _AuthScaffoldState extends State<AuthScaffold> {
                   child: Image.asset('assets/images/music_logo.png'),
                 ),
               ),
-              const SizedBox(height: 38),
+              SizedBox(height: 38.h),
               Text(
                 widget.title,
                 textAlign: TextAlign.center,
-                style: const TextStyle(
+                style: TextStyle(
                   color: Colors.white,
-                  fontSize: 28,
+                  fontSize: 28.sp,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(height: 8),
+              SizedBox(height: 8.h),
               Text(
                 widget.subtitle,
                 textAlign: TextAlign.center,
                 style: const TextStyle(color: Colors.white60),
               ),
-              const SizedBox(height: 28),
+              SizedBox(height: 28.h),
               if (widget.showSocialLogin) ...[
                 OutlinedButton.icon(
                   onPressed: () {},
@@ -90,21 +91,21 @@ class _AuthScaffoldState extends State<AuthScaffold> {
                   label: const Text('Login with Apple'),
                   style: kSocialStyle,
                 ),
-                const SizedBox(height: 16),
+                SizedBox(height: 16.h),
                 OutlinedButton.icon(
                   onPressed: () {},
-                  icon: const Text(
+                  icon: Text(
                     'G',
                     style: TextStyle(
                       color: Color(0xff4285F4),
-                      fontSize: 20,
+                      fontSize: 20.sp,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   label: const Text('Login with Google'),
                   style: kSocialStyle,
                 ),
-                const SizedBox(height: 30),
+                SizedBox(height: 30.h),
                 const Row(
                   children: [
                     Expanded(child: Divider(color: Colors.white24)),
@@ -119,7 +120,7 @@ class _AuthScaffoldState extends State<AuthScaffold> {
                   ],
                 ),
               ],
-              const SizedBox(height: 24),
+              SizedBox(height: 24.h),
               Form(
                 key: _formKey,
                 child: Column(
@@ -143,7 +144,7 @@ class _AuthScaffoldState extends State<AuthScaffold> {
                   ),
                 ),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: 10.h),
               FilledButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) widget.onPrimary();
@@ -154,7 +155,7 @@ class _AuthScaffoldState extends State<AuthScaffold> {
                 ),
                 child: Text(widget.primaryLabel),
               ),
-              const SizedBox(height: 18),
+              SizedBox(height: 18.h),
               widget.footer,
             ],
           ),

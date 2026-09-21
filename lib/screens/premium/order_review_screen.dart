@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OrderReviewScreen extends StatelessWidget {
   const OrderReviewScreen({super.key});
@@ -13,33 +14,34 @@ class OrderReviewScreen extends StatelessWidget {
       barrierColor: Colors.black.withOpacity(0.4), // درجة تعتيم الخلفية
       builder: (BuildContext context) {
         return BackdropFilter(
-          
           filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
           child: Dialog(
-            backgroundColor: const Color(0xFF1B1921), 
+            backgroundColor: const Color(0xFF1B1921),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(24),
             ),
             insetPadding: const EdgeInsets.symmetric(horizontal: 24),
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 32.0),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 24.0,
+                vertical: 32.0,
+              ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const SizedBox(height: 8),
+                  SizedBox(height: 8.h),
 
-        
                   Container(
-                    width: 90,
-                    height: 90,
+                    width: 90.w,
+                    height: 90.h,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: primaryBlue.withOpacity(0.12),
                     ),
                     child: Center(
                       child: Container(
-                        width: 66,
-                        height: 66,
+                        width: 66.w,
+                        height: 66.h,
                         decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           color: primaryBlue,
@@ -54,42 +56,39 @@ class OrderReviewScreen extends StatelessWidget {
                     ),
                   ),
 
-                  const SizedBox(height: 24),
+                  SizedBox(height: 24.h),
 
-          
-                  const Text(
+                  Text(
                     'Payment Received\nSuccessfully',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 20,
+                      fontSize: 20.sp,
                       fontWeight: FontWeight.bold,
                       height: 1.3,
                     ),
                   ),
 
-                  const SizedBox(height: 12),
+                  SizedBox(height: 12.h),
 
-          
                   Text(
                     'Your payment received successfully.\nListen your favourite music',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.white.withOpacity(0.7),
-                      fontSize: 13,
+                      fontSize: 13.sp,
                       height: 1.4,
                     ),
                   ),
 
-                  const SizedBox(height: 28),
+                  SizedBox(height: 28.h),
 
-              
                   SizedBox(
                     width: double.infinity,
-                    height: 50,
+                      height: 50.h,
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.pop(context); 
+                        Navigator.pop(context);
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: primaryBlue,
@@ -98,11 +97,11 @@ class OrderReviewScreen extends StatelessWidget {
                         ),
                         elevation: 0,
                       ),
-                      child: const Text(
+                      child: Text(
                         'Done',
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 16,
+                          fontSize: 16.sp,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -136,11 +135,11 @@ class OrderReviewScreen extends StatelessWidget {
           ),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Text(
+        title: Text(
           'Order Review',
           style: TextStyle(
             color: Colors.white,
-            fontSize: 18,
+            fontSize: 18.sp,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -155,9 +154,8 @@ class OrderReviewScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SizedBox(height: 12),
+                    SizedBox(height: 12.h),
 
-          
                     Container(
                       width: double.infinity,
                       clipBehavior: Clip.antiAlias,
@@ -182,39 +180,39 @@ class OrderReviewScreen extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                const Text(
+                                Text(
                                   'Premium Plan',
                                   style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 18,
+                                    fontSize: 18.sp,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                const SizedBox(height: 8),
-                                const Text(
+                                SizedBox(height: 8.h),
+                                Text(
                                   '\$35.99',
                                   style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 28,
+                                    fontSize: 28.sp,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                const SizedBox(height: 16),
+                                SizedBox(height: 16.h),
                                 _buildFeatureItem('Unlimited Songs'),
                                 _buildFeatureItem('Add Free Music'),
                                 _buildFeatureItem('Unlimited Download'),
-                                const SizedBox(height: 10),
+                                SizedBox(height: 10.h),
                                 Row(
-                                  children: const [
+                                  children: [
                                     Text(
                                       'See All',
                                       style: TextStyle(
                                         color: Colors.white,
-                                        fontSize: 12,
+                                        fontSize: 12.sp,
                                         fontWeight: FontWeight.w500,
                                       ),
                                     ),
-                                    SizedBox(width: 4),
+                                    SizedBox(width: 4.w),
                                     Icon(
                                       Icons.keyboard_arrow_down,
                                       color: Colors.white,
@@ -229,11 +227,11 @@ class OrderReviewScreen extends StatelessWidget {
                       ),
                     ),
 
-                    const SizedBox(height: 32),
+                    SizedBox(height: 32.h),
 
                     // Price Breakdown Section
                     _buildRowItem('Plan Amount', '\$35.99', isBold: false),
-                    const SizedBox(height: 14),
+                    SizedBox(height: 14.h),
                     _buildRowItem(
                       'Discount',
                       '\$1',
@@ -242,26 +240,29 @@ class OrderReviewScreen extends StatelessWidget {
                       valueColor: const Color(0xFF00E676),
                     ),
 
-                    const SizedBox(height: 20),
+                    SizedBox(height: 20.h),
                     const Divider(color: Colors.white12, height: 1),
-                    const SizedBox(height: 20),
+                    SizedBox(height: 20.h),
 
-                    _buildRowItem('Total', '\$34.99', isBold: true, fontSize: 18),
+                    _buildRowItem(
+                      'Total',
+                      '\$34.99',
+                      isBold: true,
+                      fontSize: 18.sp,
+                    ),
 
-                    const SizedBox(height: 32),
+                    SizedBox(height: 32.h),
 
-        
-                    const Text(
+                    Text(
                       'Payment Method',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 16,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const SizedBox(height: 16),
+                    SizedBox(height: 16.h),
 
-        
                     Container(
                       padding: const EdgeInsets.symmetric(
                         horizontal: 16,
@@ -284,8 +285,8 @@ class OrderReviewScreen extends StatelessWidget {
                                     width: 22,
                                     height: 22,
                                     decoration: const BoxDecoration(
-                                      color: Color(0xFFEB001B),
                                       shape: BoxShape.circle,
+                                      color: Color(0xFFEB001B),
                                     ),
                                   ),
                                 ),
@@ -295,7 +296,9 @@ class OrderReviewScreen extends StatelessWidget {
                                     width: 22,
                                     height: 22,
                                     decoration: BoxDecoration(
-                                      color: const Color(0xFFF79E1B).withOpacity(0.9),
+                                      color: const Color(
+                                        0xFFF79E1B,
+                                      ).withOpacity(0.9),
                                       shape: BoxShape.circle,
                                     ),
                                   ),
@@ -303,13 +306,13 @@ class OrderReviewScreen extends StatelessWidget {
                               ],
                             ),
                           ),
-                          const SizedBox(width: 14),
-                          const Expanded(
+                          SizedBox(width: 14.w),
+                          Expanded(
                             child: Text(
                               '2367 XXXX 1789 0098',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 14,
+                                fontSize: 14.sp,
                                 letterSpacing: 0.5,
                                 fontWeight: FontWeight.w500,
                               ),
@@ -317,11 +320,11 @@ class OrderReviewScreen extends StatelessWidget {
                           ),
                           GestureDetector(
                             onTap: () => Navigator.pop(context),
-                            child: const Text(
+                            child: Text(
                               'Edit',
                               style: TextStyle(
                                 color: primaryBlue,
-                                fontSize: 14,
+                                fontSize: 14.sp,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
@@ -334,12 +337,11 @@ class OrderReviewScreen extends StatelessWidget {
               ),
             ),
 
-    
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: SizedBox(
                 width: double.infinity,
-                height: 52,
+                height: 52.h,
                 child: ElevatedButton(
                   onPressed: () => _showPaymentSuccessDialog(context),
                   style: ElevatedButton.styleFrom(
@@ -349,11 +351,11 @@ class OrderReviewScreen extends StatelessWidget {
                     ),
                     elevation: 0,
                   ),
-                  child: const Text(
+                  child: Text(
                     'Pay Now',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -379,12 +381,12 @@ class OrderReviewScreen extends StatelessWidget {
               shape: BoxShape.circle,
             ),
           ),
-          const SizedBox(width: 8),
+          SizedBox(width: 8.w),
           Text(
             feature,
             style: TextStyle(
               color: Colors.white.withOpacity(0.9),
-              fontSize: 13,
+              fontSize: 13.sp,
             ),
           ),
         ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:music_app/models/top_playlists.dart';
 import 'package:music_app/screens/home/main_home_screen.dart';
 import 'package:music_app/widgets/home/top_playlists_section.dart';
@@ -18,7 +19,7 @@ class SeeAllTopPlaylist extends StatelessWidget {
           "Top playlists",
           style: TextStyle(
             color: Color.fromARGB(255, 255, 255, 255),
-            fontSize: 20,
+            fontSize: 20.sp,
             fontWeight: FontWeight.bold,
           ),
         ),

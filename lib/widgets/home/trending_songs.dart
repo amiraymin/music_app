@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:music_app/models/trending_song.dart';
 import 'dart:ui';
 
@@ -12,35 +13,35 @@ class TrendingSongs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      clipBehavior: Clip.hardEdge,
       children: [
         Container(
-          height: 220,
-          width: 260,
+          height: 220.h,
+          width: 260.w,
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage(trendModel.coverImage),
               fit: BoxFit.cover,
             ),
-            borderRadius: BorderRadius.circular(20.0),
+            borderRadius: BorderRadius.circular(20.r),
           ),
         ),
         Positioned(
-          top: 130,
-          left: 10,
-          right: 10,
+          left: 10.w,
+          right: 10.w,
+          bottom: 10.h,
           child: ClipRRect(
-            borderRadius: BorderRadius.circular(12.0),
+            borderRadius: BorderRadius.circular(12.r),
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
               child: Container(
-                height: 80,
-                width: 200,
+                height: 80.h,
                 decoration: BoxDecoration(
                   color: Colors.black.withValues(alpha: 0.5),
-                  borderRadius: BorderRadius.circular(12.0),
+                  borderRadius: BorderRadius.circular(12.r),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: EdgeInsets.all(10.r),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -52,10 +53,12 @@ class TrendingSongs extends StatelessWidget {
                             Text(
                               trendModel.songTitle,
                               style: TextStyle(
-                                fontSize: 18,
+                                fontSize: 18.spMin,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
                               ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
                             ),
                             Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -63,13 +66,17 @@ class TrendingSongs extends StatelessWidget {
                                 Icon(
                                   Icons.person_outline,
                                   color: Colors.white,
-                                  size: 16,
+                                  size: 16.r,
                                 ),
-                                Text(
-                                  trendModel.artistName,
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    color: Colors.white,
+                                Expanded(
+                                  child: Text(
+                                    trendModel.artistName,
+                                    style: TextStyle(
+                                      fontSize: 14.spMin,
+                                      color: Colors.white,
+                                    ),
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
                                   ),
                                 ),
                               ],
@@ -78,11 +85,11 @@ class TrendingSongs extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        height: 45,
-                        width: 45,
+                        height: 45.r,
+                        width: 45.r,
                         decoration: BoxDecoration(
                           color: const Color(0xff2ba2f7),
-                          borderRadius: BorderRadius.circular(12.0),
+                          borderRadius: BorderRadius.circular(12.r),
                         ),
                         child: InkWell(
                           onTap: () {
@@ -93,10 +100,10 @@ class TrendingSongs extends StatelessWidget {
                               ),
                             );
                           },
-                          child: const Icon(
+                          child: Icon(
                             Icons.play_arrow,
                             color: Colors.white,
-                            size: 20,
+                            size: 20.r,
                           ),
                         ),
                       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../widgets/auth/auth_widgets.dart';
 import 'otp_screen.dart';
 
@@ -16,22 +17,22 @@ class ConfirmPhoneScreen extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             const Icon(Icons.phone_iphone_rounded, color: kBlue, size: 44),
-            const SizedBox(height: 16),
-            const Text(
+            SizedBox(height: 16.h),
+            Text(
               'Verify your email address',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 20,
+                fontSize: 20.sp,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 8),
+            SizedBox(height: 8.h),
             const Text(
               'We will send a confirmation code to your email.',
               textAlign: TextAlign.center,
               style: TextStyle(color: Colors.white60),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
             Row(
               children: [
                 Expanded(
@@ -48,7 +49,7 @@ class ConfirmPhoneScreen extends StatelessWidget {
                     child: const Text('Cancel'),
                   ),
                 ),
-                const SizedBox(width: 12),
+                SizedBox(width: 12.w),
                 Expanded(
                   child: FilledButton(
                     onPressed: () {

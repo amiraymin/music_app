@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:music_app/models/popular_songs.dart';
 import 'package:music_app/widgets/home/popular_songs_section.dart';
 import 'package:music_app/widgets/search/search.dart';
- 
+
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
- 
+
   @override
   State<SearchScreen> createState() => _SearchScreenState();
 }
- 
+
 class _SearchScreenState extends State<SearchScreen> {
-int selectedCategoryIndex = 0; 
+  int selectedCategoryIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,12 +23,9 @@ int selectedCategoryIndex = 0;
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 60),
+              SizedBox(height: 60.h),
               TextFormField(
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                ),
+                style: TextStyle(color: Colors.white, fontSize: 20.sp),
                 onTapOutside: (event) {
                   FocusScope.of(context).unfocus();
                 },
@@ -35,7 +33,7 @@ int selectedCategoryIndex = 0;
                   filled: true,
                   fillColor: Color(0xff19161d),
                   hintText: 'Search',
-                  hintStyle: TextStyle(color: Color(0xffa9a4ad), fontSize: 20),
+                  hintStyle: TextStyle(color: Color(0xffa9a4ad), fontSize: 20.sp),
                   prefixIcon: Icon(
                     Icons.search_rounded,
                     color: Color.fromARGB(255, 250, 250, 250),
@@ -56,17 +54,17 @@ int selectedCategoryIndex = 0;
                   ),
                 ),
               ),
- 
-              SizedBox(height: 40),
+
+              SizedBox(height: 40.h),
               Text(
                 "Top Result",
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 20.sp,
                   color: Color.fromARGB(255, 255, 255, 255),
                 ),
               ),
-              SizedBox(height: 20),
- 
+              SizedBox(height: 20.h),
+
               Row(
                 children: [
                   Expanded(
@@ -86,15 +84,15 @@ int selectedCategoryIndex = 0;
                           ),
                         ),
                         separatorBuilder: (context, index) =>
-                            SizedBox(width: 5),
+                            SizedBox(width: 5.w),
                         itemCount: catagoriesList.length,
                       ),
                     ),
                   ),
                 ],
               ),
- 
-              SizedBox(height: 35),
+
+              SizedBox(height: 35.h),
               PopularSongsSection(
                 popularson: PopSongModel(
                   popDec: "popDec",

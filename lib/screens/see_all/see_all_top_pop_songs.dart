@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:music_app/models/popular_songs.dart';
 import 'package:music_app/screens/home/main_home_screen.dart';
 import 'package:music_app/widgets/home/popular_songs_section.dart';
@@ -24,7 +25,7 @@ class _SeeAllTopPopSongsState extends State<SeeAllTopPopSongs> {
           "Popular Songs",
           style: TextStyle(
             color: Color.fromARGB(255, 255, 255, 255),
-            fontSize: 20,
+            fontSize: 20.sp,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -48,18 +49,17 @@ class _SeeAllTopPopSongsState extends State<SeeAllTopPopSongs> {
           padding: const EdgeInsets.all(15.0),
           child: Column(
             children: [
-             
-                SizedBox(
-                    height:.maxFinite,
-                    width: 366,
-                    child: ListView.separated(
-                      scrollDirection: Axis.vertical,
-                      itemBuilder: (context, i) =>
-                          PopularSongsSection(popularson: pops[i]),
-                      separatorBuilder: (context, i) => SizedBox(width: 10),
-                      itemCount: pops.length,
-                    ),
-                  ),
+              SizedBox(
+                height: .maxFinite,
+                width: 366,
+                child: ListView.separated(
+                  scrollDirection: Axis.vertical,
+                  itemBuilder: (context, i) =>
+                      PopularSongsSection(popularson: pops[i]),
+                  separatorBuilder: (context, i) => SizedBox(width: 10.w),
+                  itemCount: pops.length,
+                ),
+              ),
             ],
           ),
         ),

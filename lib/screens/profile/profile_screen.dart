@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:music_app/screens/premium/premium_plans_screen.dart';
 import 'package:music_app/screens/legal/terms_screen.dart';
 
@@ -16,11 +17,11 @@ class ProfileScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: const Text(
+        title:  Text(
           'My Profile',
           style: TextStyle(
             color: Colors.white,
-            fontSize: 18,
+            fontSize: 18.sp,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -32,7 +33,7 @@ class ProfileScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 12),
+              SizedBox(height: 12.h),
 
               // Profile Image with Border
               Center(
@@ -52,21 +53,21 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 14),
+              SizedBox(height: 14.h),
 
               // User Name
-              const Center(
+               Center(
                 child: Text(
                   'John Watson',
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 18,
+                    fontSize: 18.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
 
               // Followers / Following / Likes Stats Row
               Row(
@@ -80,7 +81,7 @@ class ProfileScreen extends StatelessWidget {
                 ],
               ),
 
-              const SizedBox(height: 24),
+              SizedBox(height: 24.h),
 
               // Get Premium Button
               SizedBox(
@@ -102,30 +103,30 @@ class ProfileScreen extends StatelessWidget {
                     ),
                     elevation: 0,
                   ),
-                  child: const Text(
+                  child:  Text(
                     'Get Premium',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
               ),
 
-              const SizedBox(height: 28),
+              SizedBox(height: 28.h),
 
               // My Playlists Section Title
-              const Text(
+               Text(
                 'My Playlists',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 16,
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.bold,
                 ),
               ),
 
-              const SizedBox(height: 16),
+              SizedBox(height: 16.h),
 
               // Playlists Items
               _buildPlaylistItem(
@@ -147,7 +148,7 @@ class ProfileScreen extends StatelessWidget {
                 songCount: '80 Songs',
               ),
 
-              const SizedBox(height: 12),
+              SizedBox(height: 12.h),
 
               // Terms & Privacy Clause with InkWell and Arrow
               InkWell(
@@ -173,7 +174,7 @@ class ProfileScreen extends StatelessWidget {
                             text: 'By continuing you agree to our ',
                             style: TextStyle(
                               color: Colors.white.withValues(alpha: 0.7),
-                              fontSize: 13,
+                              fontSize: 13.sp,
                             ),
                             children: const [
                               TextSpan(
@@ -196,7 +197,7 @@ class ProfileScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const SizedBox(width: 8),
+                      SizedBox(width: 8.w),
                       const Icon(
                         Icons.arrow_forward_ios_rounded,
                         color: Colors.white54,
@@ -207,7 +208,7 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
 
               // Logout Button
               SizedBox(
@@ -227,7 +228,7 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
             ],
           ),
         ),
@@ -272,18 +273,18 @@ class ProfileScreen extends StatelessWidget {
       children: [
         Text(
           count,
-          style: const TextStyle(
+          style:  TextStyle(
             color: Colors.white,
-            fontSize: 16,
+            fontSize: 16.sp,
             fontWeight: FontWeight.bold,
           ),
         ),
-        const SizedBox(height: 4),
+        SizedBox(height: 4.h),
         Text(
           label,
           style: TextStyle(
             color: Colors.white.withValues(alpha: 0.6),
-            fontSize: 13,
+            fontSize: 13.sp,
           ),
         ),
       ],
@@ -318,25 +319,25 @@ class ProfileScreen extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          const SizedBox(width: 14),
+          SizedBox(width: 14.w),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   title,
-                  style: const TextStyle(
+                  style:  TextStyle(
                     color: Colors.white,
-                    fontSize: 15,
+                    fontSize: 15.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const SizedBox(height: 4),
+                SizedBox(height: 4.h),
                 Text(
                   songCount,
                   style: TextStyle(
                     color: Colors.white.withValues(alpha: 0.6),
-                    fontSize: 13,
+                    fontSize: 13.sp,
                   ),
                 ),
               ],

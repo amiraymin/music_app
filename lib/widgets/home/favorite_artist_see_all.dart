@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:music_app/models/favorite_artists_seeall.dart';
 import 'package:music_app/screens/playlists/oppen_favorite_artist.dart';
 
@@ -16,7 +17,7 @@ class _FavoriteArtistSeeAllState extends State<FavoriteArtistSeeAll> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: 10),
+        SizedBox(height: 10.h),
         InkWell(
           onTap: () {
             Navigator.push(
@@ -31,11 +32,11 @@ class _FavoriteArtistSeeAllState extends State<FavoriteArtistSeeAll> {
           child: Row(
             children: [
               Container(
-                height: 80,
-                width: 80,
+                height: 80.h,
+                width: 80.w,
 
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(15.r),
                   color: Color.fromARGB(255, 255, 255, 255),
                   image: DecorationImage(
                     image: AssetImage(widget.favSeeAll.image),
@@ -43,7 +44,7 @@ class _FavoriteArtistSeeAllState extends State<FavoriteArtistSeeAll> {
                   ),
                 ),
               ),
-              SizedBox(width: 10),
+              SizedBox(width: 10.w),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -51,7 +52,7 @@ class _FavoriteArtistSeeAllState extends State<FavoriteArtistSeeAll> {
                     Text(
                       widget.favSeeAll.actorName,
                       style: TextStyle(
-                        fontSize: 17,
+                        fontSize: 17.sp,
                         fontWeight: FontWeight.w400,
                         color: Color.fromARGB(255, 255, 255, 255),
                       ),
@@ -64,15 +65,15 @@ class _FavoriteArtistSeeAllState extends State<FavoriteArtistSeeAll> {
               Icon(
                 widget.favSeeAll.actorIcon,
                 color: Color.fromARGB(255, 255, 255, 255),
-                size: 30,
+                size: 30.r,
               ),
             ],
           ),
         ),
 
-        SizedBox(height: 10),
+        SizedBox(height: 10.h),
         Container(
-          height: 1,
+          height: 1.h,
           decoration: BoxDecoration(color: Color(0xff211e25)),
         ),
       ],
